@@ -24,8 +24,16 @@
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- 3D Graphics Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
+    <!-- 3D Canvas Background -->
+  <canvas id="threejs-canvas" class="background-canvas"></canvas>
+  
+  <!-- Animated Particle System -->
+  <div id="particle-container" class="particle-container"></div>
+
   <!-- HEADER / NAVBAR -->
   <header id="home">
     <nav class="nav">
@@ -292,5 +300,10 @@
   </section>
 
   <script src="script.js"></script>
+    <!-- 3D Background Animation -->
+  <script src="three-d-background.js"></script>
+  
+  <!-- Interactive Effects -->
+  <script src="interactive-effects.js"></script>
 </body>
 </html>
