@@ -1,97 +1,114 @@
 // Mobile menu toggle
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.getElementById("nav-links");
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
 
 if (menuToggle && navLinks) {
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
-
-  // Close menu on link click (mobile)
-  navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("show");
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
     });
-  });
+
+    // Close menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('show');
+        });
+    });
 }
 
-// Highlight active nav link on scroll
-const sections = document.querySelectorAll("section[id]");
-const navItems = document.querySelectorAll(".nav-links a");
-
-window.addEventListener("scroll", () => {
-  const scrollY = window.pageYOffset;
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 100;
-    const sectionHeight = section.offsetHeight;
-    const id = section.getAttribute("id");
-
-    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-      navItems.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === `#${id}`) {
-          link.classList.add("active");
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         }
-      });
-    }
-  });
+    });
 });
 
-// Scroll reveal animation using IntersectionObserver
-const revealElements = document.querySelectorAll(".reveal");
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-        observer.unobserve(entry.target);
-      }
+// Highlight active nav link on scroll
+window.addEventListener('scroll', () => {
+    let current = '';
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
     });
-  },
-  { threshold: 0.15 }
-);
 
-revealElements.forEach((el) => observer.observe(el));
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+        }
+    });
+});
 
-// Typing effect in hero subtitle
-const subtitleEl = document.getElementById("hero-subtitle");
-const subtitles = [
-  "BCA Student",
-  "Python & Web Dev Intern",
-  "Aspiring Software Developer"
-];
+// Add scroll animation for elements
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
 
-let subtitleIndex = 0;
-let charIndex = 0;
-let deleting = false;
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
 
-function typeLoop() {
-  if (!subtitleEl) return;
+document.querySelectorAll('.project-card, .skill-category').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+});
 
-  const current = subtitles[subtitleIndex];
-  const visible = current.slice(0, charIndex);
+// Typing effect for hero title
+const heroTitle = document.querySelector('.hero-title');
+if (heroTitle) {
+    const text = heroTitle.textContent;
+    heroTitle.textContent = '';
+    let index = 0;
 
-  subtitleEl.textContent = visible;
-
-  if (!deleting && charIndex < current.length) {
-    charIndex++;
-  } else if (deleting && charIndex > 0) {
-    charIndex--;
-  } else {
-    if (!deleting) {
-      deleting = true;
-      setTimeout(typeLoop, 1300); // pause before deleting
-      return;
-    } else {
-      deleting = false;
-      subtitleIndex = (subtitleIndex + 1) % subtitles.length;
+    function typeText() {
+        if (index < text.length) {
+            heroTitle.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeText, 50);
+        }
     }
-  }
 
-  const speed = deleting ? 60 : 110;
-  setTimeout(typeLoop, speed);
+    // Only start typing on page load
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', typeText);
+    } else {
+        typeText();
+    }
 }
 
-typeLoop();
+// Add animation to stats on scroll
+const statsSection = document.querySelector('.about-stats');
+if (statsSection) {
+    const observer2 = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.querySelectorAll('.stat').forEach((stat, index) => {
+                    setTimeout(() => {
+                        stat.style.animation = 'slideUp 0.6s ease-out';
+                    }, index * 100);
+                });
+                observer2.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer2.observe(statsSection);
+}

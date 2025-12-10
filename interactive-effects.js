@@ -1,121 +1,139 @@
-// Interactive Effects and Animations
+// ===== INTERACTIVE EFFECTS & ANIMATIONS =====
+
 const InteractiveEffects = () => {
-  // Scroll Animations
-  const setupScrollAnimations = () => {
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
+    // Parallax Effect on Scroll
+    const setupParallax = () => {
+        const parallaxElements = document.querySelectorAll('[data-parallax]');
+        window.addEventListener('scroll', () => {
+            parallaxElements.forEach(el => {
+                const scrollPos = window.scrollY;
+                const elementOffset = el.offsetTop;
+                const distance = scrollPos - elementOffset;
+                el.style.transform = `translateY(${distance * 0.5}px)`;
+            });
+        });
+    };
 
-    reveals.forEach((reveal) => observer.observe(reveal));
-  };
+    // Reveal Elements on Scroll
+    const setupScrollReveal = () => {
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
 
-  // Navigation Scroll Effect
-  const setupNavigation = () => {
-    const nav = document.querySelector('.nav');
-    const navLinks = document.querySelectorAll('.nav-links a');
+        reveals.forEach((reveal) => observer.observe(reveal));
+    };
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-    });
+    // Navigation Scroll Effect
+    const setupNavigation = () => {
+        const nav = document.querySelector('.navbar');
+        let lastScrollPos = 0;
 
-    navLinks.forEach((link) => {
-      link.addEventListener('click', () => {
-        navLinks.forEach((l) => l.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
-  };
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
 
-  // Mobile Menu Toggle
-  const setupMobileMenu = () => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+            if (scrollPos > 100) {
+                nav.style.background = 'rgba(0, 0, 0, 0.95)';
+                nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                nav.style.background = 'rgba(0, 0, 0, 0.9)';
+                nav.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
+            }
 
-    if (menuToggle) {
-      menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-      });
-    }
-  };
+            lastScrollPos = scrollPos;
+        });
+    };
 
-  // Particle System
-  const setupParticles = () => {
-    const container = document.getElementById('particle-container');
-    if (!container) return;
+    // Project Card Hover Effects
+    const setupProjectHover = () => {
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) scale(1.02)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    };
 
-    const particleCount = 30;
-    for (let i = 0; i < particleCount; i++) {
-      const particle = document.createElement('div');
-      particle.className = 'particle';
-      particle.style.left = Math.random() * 100 + '%';
-      particle.style.top = Math.random() * 100 + '%';
-      particle.style.width = Math.random() * 4 + 2 + 'px';
-      particle.style.height = particle.style.width;
-      particle.style.background = `rgba(0, 212, 255, ${Math.random() * 0.4 + 0.2})`;
-      particle.style.borderRadius = '50%';
-      particle.style.boxShadow = `0 0 ${Math.random() * 10 + 5}px rgba(0, 212, 255, 0.5)`;
-      particle.style.animation = `float ${Math.random() * 20 + 15}s linear infinite`;
+    // Button Ripple Effect
+    const setupRippleEffect = () => {
+        const buttons = document.querySelectorAll('.cta-button, .project-link, .contact-link');
+        buttons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
 
-      container.appendChild(particle);
-    }
-  };
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
 
-  // Smooth Scroll for Anchor Links
-  const setupSmoothScroll = () => {
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href !== '#' && document.querySelector(href)) {
-          e.preventDefault();
-          document.querySelector(href).scrollIntoView({
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-  };
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+    };
 
-  // Card Hover Effects
-  const setupCardHovers = () => {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach((card) => {
-      card.addEventListener('mouseenter', function () {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
-      });
-      card.addEventListener('mouseleave', function () {
-        this.style.transform = 'translateY(0) scale(1)';
-      });
-    });
-  };
+    // Mouse Follow Effect for Background
+    const setupMouseFollow = () => {
+        const hero = document.querySelector('.hero');
+        if (!hero) return;
 
-  // Initialize all effects
-  const init = () => {
-    setupScrollAnimations();
-    setupNavigation();
-    setupMobileMenu();
-    setupParticles();
-    setupSmoothScroll();
-    setupCardHovers();
-  };
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            hero.style.background = `linear-gradient(${135 + x * 10}deg, #667eea 0%, #764ba2 100%)`;
+        });
+    };
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+    // Skill Progress Animation
+    const setupSkillProgress = () => {
+        const skillLevels = document.querySelectorAll('.skill-level');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideUp 0.6s ease-out';
+                }
+            });
+        });
+
+        skillLevels.forEach(skill => observer.observe(skill));
+    };
+
+    // Initialize All Effects
+    const init = () => {
+        setupParallax();
+        setupScrollReveal();
+        setupNavigation();
+        setupProjectHover();
+        setupRippleEffect();
+        setupMouseFollow();
+        setupSkillProgress();
+    };
+
+    return { init };
 };
 
-// Start interactive effects
-InteractiveEffects();
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        InteractiveEffects().init();
+    });
+} else {
+    InteractiveEffects().init();
+}

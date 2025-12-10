@@ -3,222 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hariom - Web Developer</title>
-    <meta name="description" content="Hariom's Web Development Portfolio - Beginner developer learning HTML, CSS, and JavaScript">
+    <title>Hariom Patel - Web Development Portfolio</title>
+    <meta name="description" content="Hariom Patel's Web Development Portfolio - Full Stack Developer, HTML, CSS, JavaScript">
     <meta name="keywords" content="Web Developer, HTML, CSS, JavaScript, Portfolio">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow-x: hidden;
-        }
-        #canvas-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            z-index: -1;
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .glass {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        .glow {
-            box-shadow: 0 0 20px rgba(102,126,234,0.4);
-        }
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-        .float-animation {
-            animation: float 3s ease-in-out infinite;
-        }
-         
-    /* Hero Section Animations */
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    @keyframes glow {
-      0%, 100% {
-        box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
-      }
-      50% {
-        box-shadow: 0 0 40px rgba(118, 75, 162, 0.6);
-      }
-    }
-    
-    .hero-avatar {
-      animation: fadeInDown 1s ease-out, glow 3s ease-in-out infinite;
-      max-width: 300px;
-    }
-    
-    .hero-content h1 {
-      animation: fadeInDown 0.8s ease-out 0.2s both;
-    }
-    
-    .hero-content p {
-      animation: fadeInDown 0.8s ease-out 0.4s both;
-    }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
-    <canvas id="canvas-bg"></canvas>
-
-    <!-- Navigation -->
-    <nav class="fixed w-full top-0 glass z-50 border-b border-purple-500/20">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold gradient-text">HARIOM</h1>
-            <div class="flex gap-8 text-sm font-semibold">
-                <a href="#home" class="hover:text-purple-400 transition">Home</a>
-                <a href="#about" class="hover:text-purple-400 transition">About</a>
-                <a href="#projects" class="hover:text-purple-400 transition">Projects</a>
-                <a href="#contact" class="hover:text-purple-400 transition">Contact</a>
-                <a href="resume.html" class="hover:text-purple-400 transition px-4 py-2 border border-purple-500 rounded hover:bg-purple-500/20">Resume</a>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>Hariom Patel</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="h-screen flex items-center justify-center relative">
-        <div class="text-center">
-            <h2 class="text-7xl font-bold mb-6 gradient-text float-animation">Web Developer</h2>
-            <p class="text-2xl text-gray-400 mb-8">Learning to build amazing websites</p>
-                        <!-- Hariom Avatar Graphic -->
-            <div class="my-8 flex justify-center">
-                <img src="images/hariom-avatar.svg" alt="Hariom - Developer working on computer" class="w-48 h-auto d hero-avatar"rop-shadow-lg hover:scale-105 transition duration-300"/>
-            </div>
-            <div class="flex gap-6 justify-center">
-                <a href="#projects" class="px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg font-bold glow transition">View My Work</a>
-                <a href="#contact" class="px-8 py-3 border-2 border-purple-500 hover:bg-purple-500/10 rounded-lg font-bold transition">Get in Touch</a>
-                <a href="resume.html" class="px-8 py-3 border-2 border-green-500 hover:bg-green-500/10 rounded-lg font-bold transition">View Resume</a>
-            </div>
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h2 class="hero-title">Welcome to My Portfolio</h2>
+            <p class="hero-subtitle">I'm a passionate web developer creating beautiful and functional websites</p>
+            <a href="#projects" class="cta-button">View My Work</a>
         </div>
-    </section>
+        <canvas id="background-canvas"></canvas>
+    </header>
 
     <!-- About Section -->
-    <section id="about" class="py-20 px-6 max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold mb-12 gradient-text">About Me</h2>
-        <div class="grid md:grid-cols-2 gap-12">
-            <div class="glass p-8 rounded-xl">
-                <h3 class="text-2xl font-bold mb-4">Who I Am</h3>
-                <p class="text-gray-300 leading-relaxed">I'm a beginner web developer passionate about learning new technologies. I started my journey in web development by learning HTML, CSS, and JavaScript. I enjoy solving problems and creating interactive websites.</p>
-            </div>
-            <div class="space-y-4">
-                <div class="glass p-4 rounded-lg">
-                    <h3 class="text-xl font-bold mb-2 text-purple-400">My Skills</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-purple-500/30 text-purple-300 rounded-full text-sm">HTML</span>
-                        <span class="px-3 py-1 bg-purple-500/30 text-purple-300 rounded-full text-sm">CSS</span>
-                        <span class="px-3 py-1 bg-purple-500/30 text-purple-300 rounded-full text-sm">JavaScript</span>
-                        <span class="px-3 py-1 bg-blue-500/30 text-blue-300 rounded-full text-sm">React (Learning)</span>
-                    </div>
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm Hariom Patel, a beginner web developer passionate about learning and creating amazing web experiences. I specialize in front-end development with HTML, CSS, and JavaScript.</p>
+                    <p>With a focus on clean code and user-friendly designs, I aim to bring ideas to life on the web. I'm constantly learning new technologies and improving my skills to deliver better solutions.</p>
+                    <p><a href="resume.html" class="resume-link">View My Resume</a></p>
                 </div>
-                <div class="glass p-4 rounded-lg">
-                    <h3 class="text-xl font-bold mb-2 text-green-400">What I'm Learning</h3>
-                    <p class="text-gray-300">Currently learning React and exploring backend development with Node.js</p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>10+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat">
+                        <h3>3+</h3>
+                        <p>Years Learning</p>
+                    </div>
+                    <div class="stat">
+                        <h3>100%</h3>
+                        <p>Commitment</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 px-6 max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold mb-12 gradient-text">My Projects</h2>
-                <!-- Web Projects Section -->
-                <h3 class="text-2xl font-bold mb-8 text-purple-400">Web Projects</h3>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Project 1 -->
-            <div class="glass p-6 rounded-xl hover:scale-105 transition duration-300 glow">
-                <h3 class="text-xl font-bold mb-3">Portfolio Website</h3>
-                <p class="text-gray-300 mb-4">My personal portfolio built with HTML, CSS, and JavaScript. Features a responsive design and smooth animations.</p>
-                <div class="flex gap-2 mb-4">
-                    <span class="px-3 py-1 bg-purple-500/30 text-purple-300 rounded-full text-sm">HTML</span>
-                    <span class="px-3 py-1 bg-purple-500/30 text-purple-300 rounded-full text-sm">CSS</span>
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/project1.jpg" alt="Project 1" onerror="this.src='https://via.placeholder.com/300x200?text=Project+1'">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Portfolio Website</h3>
+                        <p class="project-description">A responsive portfolio website built with HTML, CSS, and JavaScript featuring smooth animations and modern design.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
                 </div>
-                        <!-- Python Projects Section -->
-                        <h3 class="text-2xl font-bold mb-8 text-green-400 mt-16">Python Projects</h3>
-                
-            <!-- Python Project 1 -->
-            <div class="glass p-6 rounded-xl hover:scale-105 transition duration-300 glow">
-                <h3 class="text-xl font-bold mb-3">AI Personal Assistant</h3>
-                <p class="text-gray-300 mb-4">An intelligent Python assistant that controls your computer and automates tasks using natural language commands. Features system control, file operations, and browser automation.</p>
-                <div class="flex gap-2 mb-4">
-                    <span class="px-3 py-1 bg-green-500/30 text-green-300 rounded-full text-sm">Python</span>
-                    <span class="px-3 py-1 bg-blue-500/30 text-blue-300 rounded-full text-sm">Automation</span>
+
+                <!-- Project Card 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/project2.jpg" alt="Project 2" onerror="this.src='https://via.placeholder.com/300x200?text=Project+2'">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Todo Application</h3>
+                        <p class="project-description">A fully functional todo application with add, delete, and mark complete features using vanilla JavaScript.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
                 </div>
-                <a href="https://github.com/pateljiop/AI-Personal-Assistant" class="text-purple-400 hover:text-purple-300 font-semibold">View Project →</a>
-            </div>
 
-            <!-- Python Project 2 -->
-            <div class="glass p-6 rounded-xl hover:scale-105 transition duration-300 glow">
-                <h3 class="text-xl font-bold mb-3">Expense Tracker</h3>
-                <p class="text-gray-300 mb-4">A personal finance management tool built with Python. Track expenses, categorize spending, generate financial reports, and visualize data with charts.</p>
-                <div class="flex gap-2 mb-4">
-                    <span class="px-3 py-1 bg-green-500/30 text-green-300 rounded-full text-sm">Python</span>
-                    <span class="px-3 py-1 bg-yellow-500/30 text-yellow-300 rounded-full text-sm">Data Analysis</span>
+                <!-- Project Card 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/project3.jpg" alt="Project 3" onerror="this.src='https://via.placeholder.com/300x200?text=Project+3'">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Weather App</h3>
+                        <p class="project-description">A weather application that fetches real-time weather data and displays it with beautiful animations and icons.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
                 </div>
-                <a href="https://github.com/pateljiop/Expense-Tracker" class="text-purple-400 hover:text-purple-300 font-semibold">View Project →</a>
-            </div>
 
-            <!-- Python Project 3 -->
-            <div class="glass p-6 rounded-xl hover:scale-105 transition duration-300 glow">
-                <h3 class="text-xl font-bold mb-3">Web Scraper Tool</h3>
-                <p class="text-gray-300 mb-4">A powerful Python web scraper for automated data extraction. Extracts data from websites, saves to CSV/JSON formats, includes scheduling for periodic tasks.</p>
-                <div class="flex gap-2 mb-4">
-                    <span class="px-3 py-1 bg-green-500/30 text-green-300 rounded-full text-sm">Python</span>
-                    <span class="px-3 py-1 bg-orange-500/30 text-orange-300 rounded-full text-sm">Web Scraping</span>
+                <!-- Project Card 4 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/project4.jpg" alt="Project 4" onerror="this.src='https://via.placeholder.com/300x200?text=Project+4'">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Calculator App</h3>
+                        <p class="project-description">A sleek calculator application with support for basic arithmetic operations and keyboard shortcuts.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
                 </div>
-                <a href="https://github.com/pateljiop/Web-Scraper-Tool" class="text-purple-400 hover:text-purple-300 font-semibold">View Project →</a>
-            </div>
-                <a href="#" class="text-purple-400 hover:text-purple-300 font-semibold">View Project →</a>
-            </div>
 
+                <!-- Project Card 5 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/project5.jpg" alt="Project 5" onerror="this.src='https://via.placeholder.com/300x200?text=Project+5'">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Notes App</h3>
+                        <p class="project-description">A note-taking application with local storage functionality, allowing users to save and manage their notes.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">LocalStorage</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Project Card 6 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/project6.jpg" alt="Project 6" onerror="this.src='https://via.placeholder.com/300x200?text=Project+6'">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Expense Tracker</h3>
+                        <p class="project-description">An expense tracker that helps users manage their finances with charts and categorized spending insights.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend Development</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-name">HTML5</span> <span class="skill-level">Advanced</span></li>
+                        <li><span class="skill-name">CSS3</span> <span class="skill-level">Advanced</span></li>
+                        <li><span class="skill-name">JavaScript</span> <span class="skill-level">Intermediate</span></li>
+                        <li><span class="skill-name">Responsive Design</span> <span class="skill-level">Advanced</span></li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-name">Git & GitHub</span> <span class="skill-level">Intermediate</span></li>
+                        <li><span class="skill-name">VS Code</span> <span class="skill-level">Advanced</span></li>
+                        <li><span class="skill-name">Netlify</span> <span class="skill-level">Intermediate</span></li>
+                        <li><span class="skill-name">Chrome DevTools</span> <span class="skill-level">Advanced</span></li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Design & UX</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-name">UI Design</span> <span class="skill-level">Intermediate</span></li>
+                        <li><span class="skill-name">Animations</span> <span class="skill-level">Intermediate</span></li>
+                        <li><span class="skill-name">Accessibility</span> <span class="skill-level">Beginner</span></li>
+                        <li><span class="skill-name">Mobile-First</span> <span class="skill-level">Advanced</span></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 px-6 max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Let's Connect</h2>
-        <div class="glass p-12 rounded-xl">
-            <p class="text-gray-300 mb-8 text-center text-lg">I'm always interested in meeting new people and discussing web development. Feel free to reach out!</p>
-            <div class="flex flex-col items-center gap-6">
-                <a href="mailto:your.email@example.com" class="px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg font-bold glow transition">Send me an Email</a>
-                <div class="flex gap-6 mt-6">
-                    <a href="#" class="text-2xl hover:text-purple-400 transition">
-                        <i class="fab fa-github"></i>
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <p class="contact-intro">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+                <div class="contact-links">
+                    <a href="mailto:pateljiop@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> Email
                     </a>
-                    <a href="#" class="text-2xl hover:text-purple-400 transition">
-                        <i class="fab fa-linkedin"></i>
+                    <a href="https://github.com" target="_blank" class="contact-link">
+                        <i class="fab fa-github"></i> GitHub
                     </a>
-                    <a href="#" class="text-2xl hover:text-purple-400 transition">
-                        <i class="fab fa-twitter"></i>
+                    <a href="https://linkedin.com" target="_blank" class="contact-link">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="contact-link">
+                        <i class="fab fa-twitter"></i> Twitter
                     </a>
                 </div>
             </div>
@@ -226,85 +258,17 @@
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-purple-500/20 py-8 px-6 text-center text-gray-400 mt-20">
-        <p>&copy; 2024 Hariom. All rights reserved. | <a href="resume.html" class="text-purple-400 hover:text-purple-300">View Resume</a></p>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Hariom Patel. All rights reserved.</p>
+            <p>Designed and developed with <i class="fas fa-heart"></i> by Hariom Patel</p>
+        </div>
     </footer>
 
-    <script>
-        // Three.js animation (simplified)
-        const canvas = document.getElementById('canvas-bg');
-        const ctx = canvas.getContext('2d');
-        
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        // Responsive canvas
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-
-        // Simple particle animation
-        let particles = [];
-        
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2;
-                this.speedX = (Math.random() - 0.5) * 0.5;
-                this.speedY = (Math.random() - 0.5) * 0.5;
-            }
-            
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                if (this.x > canvas.width) this.x = 0;
-                if (this.x < 0) this.x = canvas.width;
-                if (this.y > canvas.height) this.y = 0;
-                if (this.y < 0) this.y = canvas.height;
-            }
-            
-            draw() {
-                ctx.fillStyle = 'rgba(102, 126, 234, 0.5)';
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        // Initialize particles
-        for (let i = 0; i < 50; i++) {
-            particles.push(new Particle());
-        }
-
-        // Animation loop
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            for (let particle of particles) {
-                particle.update();
-                particle.draw();
-            }
-            
-            requestAnimationFrame(animate);
-        }
-        
-        animate();
-
-        // Smooth scrolling for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="three-d-background.js"></script>
+    <script src="script.js"></script>
+    <script src="interactive-effects.js"></script>
 </body>
 </html>
