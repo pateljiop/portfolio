@@ -88,6 +88,12 @@
             text-align: center;
             font-size: 0.9em;
         }
+        .skill-badge.beginner {
+            background: linear-gradient(135deg, #667eea 0%, #667eea 100%);
+        }
+        .skill-badge.intermediate {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
         .print-btn {
             position: absolute;
             top: 20px;
@@ -102,6 +108,14 @@
         }
         .print-btn:hover {
             background: #764ba2;
+        }
+        .certificate-note {
+            background: #e8f4f8;
+            padding: 10px 15px;
+            border-left: 4px solid #667eea;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #555;
         }
         @media print {
             .print-btn {
@@ -138,19 +152,50 @@
         <div class="section">
             <div class="section-title">Professional Summary</div>
             <p style="color: #555; text-align: justify;">
-                Motivated beginner web developer passionate about learning web technologies. Currently studying web development fundamentals including HTML, CSS, and JavaScript. Eager to gain practical experience and build real-world projects. Strong communication skills and a quick learner with dedication to continuous improvement.
+                Motivated beginner web developer and Python learner passionate about building web applications and learning new technologies. Completed multiple internships in Python programming and web development with hands-on experience in real-world projects. Quick learner with strong problem-solving skills and dedication to continuous improvement. Proficient in HTML, CSS, JavaScript, and currently learning Python.
             </p>
         </div>
 
         <div class="section">
             <div class="section-title">Technical Skills</div>
             <div class="skills-grid">
-                <div class="skill-badge">HTML</div>
-                <div class="skill-badge">CSS</div>
-                <div class="skill-badge">JavaScript</div>
-                <div class="skill-badge">Responsive Design</div>
-                <div class="skill-badge">Git & GitHub</div>
-                <div class="skill-badge">Problem Solving</div>
+                <div class="skill-badge beginner">HTML</div>
+                <div class="skill-badge beginner">CSS</div>
+                <div class="skill-badge beginner">JavaScript</div>
+                <div class="skill-badge beginner">Python (Beginner)</div>
+                <div class="skill-badge beginner">Responsive Design</div>
+                <div class="skill-badge beginner">Git & GitHub</div>
+                <div class="skill-badge beginner">Problem Solving</div>
+                <div class="skill-badge">MS Excel</div>
+                <div class="skill-badge">ChatGPT/AI Tools</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Internship Experience</div>
+            
+            <div class="entry">
+                <div class="entry-title">Python Programming Intern</div>
+                <div class="entry-subtitle">CodSoft | Jan 2024 - Feb 2024</div>
+                <div class="entry-description">
+                    Completed a 4-week Python programming internship focusing on core Python concepts and real-world applications. Developed mini-projects including calculator, game logic, and data processing utilities. Improved debugging techniques and coding best practices.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-title">Web Development Intern</div>
+                <div class="entry-subtitle">Prodigy InfoTech | Mar 2024</div>
+                <div class="entry-description">
+                    Completed a 1-month web development internship working extensively with HTML, CSS, and JavaScript. Designed and developed responsive UI components following modern design principles. Learned professional web development best practices and accessibility standards.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-title">Python Programming Intern</div>
+                <div class="entry-subtitle">InternPE | Feb 2024 - Mar 2024</div>
+                <div class="entry-description">
+                    Completed a 4-week Python learning opportunity with focus on fundamentals including loops, functions, file handling, and OOP concepts. Developed mini Python projects demonstrating logical thinking and algorithmic problem-solving skills.
+                </div>
             </div>
         </div>
 
@@ -169,7 +214,7 @@
                 <div class="entry-title">Calculator App</div>
                 <div class="entry-subtitle">Personal Project | JavaScript</div>
                 <div class="entry-description">
-                    Developed a functional calculator application using vanilla JavaScript. Supports basic arithmetic operations with a clean and intuitive user interface. Demonstrates understanding of DOM manipulation and event handling.
+                    Developed a functional calculator application using vanilla JavaScript. Supports basic arithmetic operations with a clean and intuitive user interface. Demonstrates proficiency in DOM manipulation and event handling.
                 </div>
             </div>
 
@@ -177,7 +222,35 @@
                 <div class="entry-title">Todo List Application</div>
                 <div class="entry-subtitle">Personal Project | HTML, CSS, JavaScript</div>
                 <div class="entry-description">
-                    Created a task management application allowing users to add, delete, and mark tasks as complete. Implemented local storage functionality to persist tasks. This project demonstrates proficiency in DOM manipulation and user interaction design.
+                    Created a task management application allowing users to add, delete, and mark tasks as complete. Implemented local storage functionality to persist tasks. Demonstrates DOM manipulation and user interaction design.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Certifications & Courses</div>
+            
+            <div class="entry">
+                <div class="entry-title">Excel From Beginner to Expert</div>
+                <div class="entry-subtitle">Course Completion | 2025</div>
+                <div class="entry-description">
+                    Completed comprehensive Excel training covering beginner to advanced concepts. Gained proficiency in spreadsheet management, data analysis, and Excel functions.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-title">MCP: Unlock AI Integrations with Real-World Demos</div>
+                <div class="entry-subtitle">Course Completion | 2025</div>
+                <div class="entry-description">
+                    Completed course on integrating AI and machine learning concepts into real-world applications. Learned practical implementation of AI tools and APIs.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-title">ChatGPT as Your Assistant</div>
+                <div class="entry-subtitle">Course Completion | 2025</div>
+                <div class="entry-description">
+                    Completed training on utilizing ChatGPT and AI assistants for productivity and problem-solving. Proficient in leveraging AI tools for development and learning.
                 </div>
             </div>
         </div>
@@ -189,7 +262,7 @@
                 <div class="entry-title">Bachelor of Computer Applications (BCA)</div>
                 <div class="entry-subtitle">Currently Studying | [Your College Name]</div>
                 <div class="entry-description">
-                    Pursuing a degree in Computer Applications with focus on web development and programming fundamentals. Actively working on practical projects to strengthen technical skills.
+                    Pursuing a degree in Computer Applications with focus on web development and programming fundamentals. Actively working on practical projects to strengthen technical skills and gain hands-on experience.
                 </div>
             </div>
         </div>
@@ -197,11 +270,14 @@
         <div class="section">
             <div class="section-title">Core Competencies</div>
             <ul style="margin-left: 20px; color: #555;">
-                <li>Web Development Fundamentals</li>
+                <li>Web Development Fundamentals (HTML, CSS, JavaScript)</li>
+                <li>Python Programming (Beginner Level)</li>
                 <li>Front-end Development</li>
                 <li>Problem-Solving and Logical Thinking</li>
-                <li>Version Control (Git)</li>
+                <li>Version Control (Git & GitHub)</li>
                 <li>Responsive Web Design</li>
+                <li>Data Analysis with Excel</li>
+                <li>AI Tools & ChatGPT Proficiency</li>
                 <li>Quick Learner with Growth Mindset</li>
             </ul>
         </div>
@@ -209,8 +285,9 @@
         <div class="section">
             <div class="section-title">Languages & Tools</div>
             <p style="color: #555;">
-                <strong>Languages:</strong> HTML, CSS, JavaScript<br>
-                <strong>Tools & Platforms:</strong> Visual Studio Code, GitHub, Git, Figma (Basic)<br>
+                <strong>Programming Languages:</strong> HTML, CSS, JavaScript, Python (Beginner)<br>
+                <strong>Tools & Platforms:</strong> Visual Studio Code, GitHub, Git, Figma (Basic), ChatGPT, Excel<br>
+                <strong>Frameworks/Libraries:</strong> Tailwind CSS, React (Learning)<br>
                 <strong>Languages (Spoken):</strong> English, Hindi
             </p>
         </div>
