@@ -3,176 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hariom - Professional Resume</title>
+    <title>Hariom - Resume</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; color: #2c3e50; background: #f5f5f5; }
-        .resume-container { max-width: 900px; margin: 20px auto; background: white; padding: 40px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
-        .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #667eea; padding-bottom: 20px; }
-        .name { font-size: 32px; font-weight: bold; color: #667eea; margin-bottom: 10px; }
-        .contact-info { font-size: 13px; color: #555; line-height: 1.8; }
-        .contact-info a { color: #667eea; text-decoration: none; }
-        .section-title { font-size: 16px; font-weight: bold; color: #667eea; margin-top: 25px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #667eea; }
-        .job-title { font-weight: bold; color: #2c3e50; margin-top: 10px; }
-        .company-duration { color: #666; font-size: 13px; font-style: italic; }
-        .job-description { margin-top: 8px; margin-left: 20px; font-size: 13px; color: #555; }
-        .job-description li { margin-bottom: 5px; }
-        .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
-        .skill-tag { background: #667eea; color: white; padding: 8px 12px; border-radius: 4px; font-size: 12px; text-align: center; font-weight: 500; }
-        .education-item { margin-top: 12px; }
-        .education-degree { font-weight: bold; color: #2c3e50; }
-        .education-school { color: #666; font-size: 13px; }
-        .education-year { color: #999; font-size: 12px; }
-        .project-item { margin-top: 12px; margin-left: 10px; }
-        .project-name { font-weight: bold; color: #2c3e50; }
-        .project-tech { color: #667eea; font-size: 12px; }
-        .project-desc { color: #555; font-size: 13px; margin-top: 4px; }
-        .personal-details { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; font-size: 13px; }
-        .detail-item { color: #555; }
-        .detail-label { font-weight: bold; color: #2c3e50; display: inline-block; width: 100px; }
-        .print-button { position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #667eea; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; }
-        .print-button:hover { background: #764ba2; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .name {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .contact-info {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .entry {
+            margin-bottom: 20px;
+        }
+        .entry-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #333;
+        }
+        .entry-subtitle {
+            color: #666;
+            font-style: italic;
+            font-size: 0.95em;
+        }
+        .entry-description {
+            color: #555;
+            margin-top: 8px;
+            text-align: justify;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        .skill-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        .print-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .print-btn:hover {
+            background: #764ba2;
+        }
         @media print {
-            .print-button { display: none; }
-            body { background: white; }
-            .resume-container { box-shadow: none; margin: 0; }
+            .print-btn {
+                display: none;
+            }
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
         }
     </style>
 </head>
 <body>
-    <button class="print-button" onclick="window.print()">🖨️ Print Resume</button>
-
-    <div class="resume-container">
-        <!-- Header -->
+    <button class="print-btn" onclick="window.print()">🖨️ Print Resume</button>
+    
+    <div class="container">
         <div class="header">
             <div class="name">HARIOM</div>
             <div class="contact-info">
-                <p>📍 Gauwapar, Ballia, Uttar Pradesh – 221718 | 📞 +91-XXXXXXXXXX | 📧 <a href="mailto:ahuzahariom@gmail.com">ahuzahariom@gmail.com</a></p>
-                <p>🔗 <a href="https://github.com/pateljiop">GitHub</a> | <a href="https://linkedin.com/in/pateljiop">LinkedIn</a> | <a href="https://hariomdev.netlify.app">Portfolio</a></p>
+                📍 Gauwapar, Ballia, Uttar Pradesh - 221718 | 
+                📱 +91-XXXXXXXXXX | 
+                ✉️ <a href="mailto:your.email@gmail.com">your.email@gmail.com</a>
+            </div>
+            <div class="contact-info">
+                <a href="#">GitHub</a> | 
+                <a href="#">LinkedIn</a> | 
+                <a href="#">Portfolio</a>
             </div>
         </div>
 
-        <!-- Professional Summary -->
-        <div class="section-title">PROFESSIONAL SUMMARY</div>
-        <p style="font-size: 13px; color: #555; line-height: 1.7;">Motivated BCA student (3rd semester) and aspiring full-stack web developer with hands-on experience in Python programming, web development, and 3D graphics. Completed multiple internships at reputable tech companies, gaining practical knowledge in coding, problem-solving, and IT fundamentals. Demonstrated ability to build production-quality web applications with modern technologies. Strong communication skills, disciplined work ethic, and proven capacity to learn quickly in fast-paced environments.</p>
-
-        <!-- Technical Skills -->
-        <div class="section-title">TECHNICAL SKILLS</div>
-        <div class="skills-grid">
-            <div class="skill-tag">Python (Intermediate)</div>
-            <div class="skill-tag">JavaScript (Intermediate)</div>
-            <div class="skill-tag">React.js</div>
-            <div class="skill-tag">Node.js & Express</div>
-            <div class="skill-tag">HTML & CSS</div>
-            <div class="skill-tag">MongoDB</div>
-            <div class="skill-tag">Three.js</div>
-            <div class="skill-tag">Tailwind CSS</div>
-            <div class="skill-tag">C Language</div>
-            <div class="skill-tag">Git & GitHub</div>
-            <div class="skill-tag">RESTful APIs</div>
-            <div class="skill-tag">Web Design</div>
+        <div class="section">
+            <div class="section-title">Professional Summary</div>
+            <p style="color: #555; text-align: justify;">
+                Motivated beginner web developer passionate about learning web technologies. Currently studying web development fundamentals including HTML, CSS, and JavaScript. Eager to gain practical experience and build real-world projects. Strong communication skills and a quick learner with dedication to continuous improvement.
+            </p>
         </div>
 
-        <!-- Experience -->
-        <div class="section-title">PROFESSIONAL EXPERIENCE</div>
-
-        <div class="job-title">Python Programming Intern</div>
-        <div class="company-duration">InternPE | Feb 2024 – Mar 2024</div>
-        <ul class="job-description">
-            <li>Mastered Python fundamentals including loops, functions, file handling, and OOP concepts</li>
-            <li>Developed mini Python projects focusing on logical thinking and algorithmic problem-solving</li>
-            <li>Completed structured coding tasks to build strong foundation in core programming principles</li>
-        </ul>
-
-        <div class="job-title">Python Programming Intern</div>
-        <div class="company-duration">CodSoft | Jan 2024 – Feb 2024</div>
-        <ul class="job-description">
-            <li>Built multiple Python projects including calculator, game logic, and data processing utilities</li>
-            <li>Improved debugging techniques and developed professional problem-solving methodologies</li>
-            <li>Gained experience in code optimization and clean coding practices</li>
-        </ul>
-
-        <div class="job-title">Web Development Intern</div>
-        <div class="company-duration">Prodigy InfoTech | Mar 2024</div>
-        <ul class="job-description">
-            <li>Worked extensively with HTML, CSS, and JavaScript to create responsive web layouts</li>
-            <li>Designed and developed responsive UI components following modern design principles</li>
-            <li>Learned professional web development best practices and accessibility standards</li>
-        </ul>
-
-        <!-- Education -->
-        <div class="section-title">EDUCATION</div>
-        <div class="education-item">
-            <div class="education-degree">Bachelor of Computer Applications (BCA)</div>
-            <div class="education-school">Prof. Rajju Bhaiya University, Prayagraj</div>
-            <div class="education-year">Currently Pursuing | 3rd Semester (2024-2025)</div>
-        </div>
-        <div class="education-item">
-            <div class="education-degree">XII (Science) – CBSE Board</div>
-            <div class="education-school">Completed in 2022</div>
-        </div>
-        <div class="education-item">
-            <div class="education-degree">X – CBSE Board</div>
-            <div class="education-school">Completed in 2020</div>
+        <div class="section">
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-grid">
+                <div class="skill-badge">HTML</div>
+                <div class="skill-badge">CSS</div>
+                <div class="skill-badge">JavaScript</div>
+                <div class="skill-badge">Responsive Design</div>
+                <div class="skill-badge">Git & GitHub</div>
+                <div class="skill-badge">Problem Solving</div>
+            </div>
         </div>
 
-        <!-- Featured Projects -->
-        <div class="section-title">FEATURED PROJECTS</div>
+        <div class="section">
+            <div class="section-title">Projects</div>
+            
+            <div class="entry">
+                <div class="entry-title">Portfolio Website</div>
+                <div class="entry-subtitle">Personal Project | HTML, CSS, JavaScript</div>
+                <div class="entry-description">
+                    Built a responsive personal portfolio website showcasing web development skills. Implemented smooth scrolling, animations, and a modern design using Tailwind CSS. Features include responsive navigation, hero section, project showcase, and contact form.
+                </div>
+            </div>
 
-        <div class="project-item">
-            <div class="project-name">TaskMaster Web App - Full-Stack Task Management</div>
-            <div class="project-tech">React | Node.js | MongoDB | JWT Authentication</div>
-            <div class="project-desc">• Built a production-quality full-stack task management application with real-time updates</div>
-            <div class="project-desc">• Implemented secure user authentication with JWT and password hashing</div>
-            <div class="project-desc">• Designed responsive UI with modern styling and interactive features</div>
-            <div class="project-desc">📍 GitHub: <a href="https://github.com/pateljiop/TaskMaster-Web-App" style="color: #667eea;">TaskMaster-Web-App</a></div>
+            <div class="entry">
+                <div class="entry-title">Calculator App</div>
+                <div class="entry-subtitle">Personal Project | JavaScript</div>
+                <div class="entry-description">
+                    Developed a functional calculator application using vanilla JavaScript. Supports basic arithmetic operations with a clean and intuitive user interface. Demonstrates understanding of DOM manipulation and event handling.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-title">Todo List Application</div>
+                <div class="entry-subtitle">Personal Project | HTML, CSS, JavaScript</div>
+                <div class="entry-description">
+                    Created a task management application allowing users to add, delete, and mark tasks as complete. Implemented local storage functionality to persist tasks. This project demonstrates proficiency in DOM manipulation and user interaction design.
+                </div>
+            </div>
         </div>
 
-        <div class="project-item">
-            <div class="project-name">Data Analysis & Visualization - Python Analytics</div>
-            <div class="project-tech">Python | Pandas | NumPy | Matplotlib</div>
-            <div class="project-desc">• Performed comprehensive data analysis on real-world datasets using Pandas and NumPy</div>
-            <div class="project-desc">• Created interactive visualizations to present data insights effectively</div>
-            <div class="project-desc">• Demonstrated proficiency in statistical analysis and data preprocessing</div>
-            <div class="project-desc">📍 GitHub: <a href="https://github.com/pateljiop/Data-Analysis-Visualization" style="color: #667eea;">Data-Analysis-Visualization</a></div>
+        <div class="section">
+            <div class="section-title">Education</div>
+            
+            <div class="entry">
+                <div class="entry-title">Bachelor of Computer Applications (BCA)</div>
+                <div class="entry-subtitle">Currently Studying | [Your College Name]</div>
+                <div class="entry-description">
+                    Pursuing a degree in Computer Applications with focus on web development and programming fundamentals. Actively working on practical projects to strengthen technical skills.
+                </div>
+            </div>
         </div>
 
-        <div class="project-item">
-            <div class="project-name">RealTime Chat Application - WebSocket Communication</div>
-            <div class="project-tech">Socket.io | Node.js | Express | MongoDB</div>
-            <div class="project-desc">• Developed real-time messaging application using WebSocket technology</div>
-            <div class="project-desc">• Implemented user authentication and message persistence in database</div>
-            <div class="project-desc">• Added typing indicators and online user status tracking</div>
-            <div class="project-desc">📍 GitHub: <a href="https://github.com/pateljiop/RealTime-Chat-Application" style="color: #667eea;">RealTime-Chat-Application</a></div>
+        <div class="section">
+            <div class="section-title">Core Competencies</div>
+            <ul style="margin-left: 20px; color: #555;">
+                <li>Web Development Fundamentals</li>
+                <li>Front-end Development</li>
+                <li>Problem-Solving and Logical Thinking</li>
+                <li>Version Control (Git)</li>
+                <li>Responsive Web Design</li>
+                <li>Quick Learner with Growth Mindset</li>
+            </ul>
         </div>
 
-        <!-- Additional Skills -->
-        <div class="section-title">ADDITIONAL COMPETENCIES</div>
-        <div style="font-size: 13px; color: #555; line-height: 1.8;">
-            <p><strong>Soft Skills:</strong> Problem-solving, Team collaboration, Communication, Time management, Quick learner, Attention to detail</p>
-            <p><strong>Tools & Platforms:</strong> Git & GitHub, VS Code, Netlify, MongoDB Atlas, Postman, Chrome DevTools</p>
-            <p><strong>Other:</strong> Computer Fundamentals, Basic Networking, Troubleshooting, IT Support Basics, MS Office Suite</p>
-        </div>
-
-        <!-- Interests -->
-        <div class="section-title">INTERESTS & HOBBIES</div>
-        <p style="font-size: 13px; color: #555;">
-            ⚽ Playing Kabaddi (teamwork & discipline) | 🎵 Music (focus & creativity) | 📰 Tech news & current affairs | 🎮 Gaming & problem-solving
-        </p>
-
-        <!-- Personal Details -->
-        <div class="section-title">PERSONAL DETAILS</div>
-        <div class="personal-details">
-            <div class="detail-item"><span class="detail-label">Date of Birth:</span> 25 December 2004</div>
-            <div class="detail-item"><span class="detail-label">Gender:</span> Male</div>
-            <div class="detail-item"><span class="detail-label">Nationality:</span> Indian</div>
-            <div class="detail-item"><span class="detail-label">Languages:</span> English, Hindi</div>
-        </div>
-
-        <!-- Declaration -->
-        <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid #667eea; font-size: 12px; color: #555;">
-            <p><strong>DECLARATION:</strong> I hereby declare that all the information provided above is true and correct to the best of my knowledge and belief. I am committed to continuous learning and professional development.</p>
-            <p style="margin-top: 10px;">— <strong>HARIOM</strong></p>
+        <div class="section">
+            <div class="section-title">Languages & Tools</div>
+            <p style="color: #555;">
+                <strong>Languages:</strong> HTML, CSS, JavaScript<br>
+                <strong>Tools & Platforms:</strong> Visual Studio Code, GitHub, Git, Figma (Basic)<br>
+                <strong>Languages (Spoken):</strong> English, Hindi
+            </p>
         </div>
     </div>
 </body>
