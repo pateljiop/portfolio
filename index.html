@@ -1,347 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Hariom | BCA Student & Aspiring Developer</title>
-
-  <!-- Basic SEO -->
-  <meta name="description" content="Hariom – BCA student and aspiring software developer with experience in Python, C, and web development internships." />
-  <meta name="keywords" content="Hariom, BCA, Python, Web Developer, Portfolio, Intern, Fresher" />
-  <meta name="author" content="Hariom" />
-
-  <!-- Social preview (optional, add preview image later) -->
-  <meta property="og:title" content="Hariom | Portfolio" />
-  <meta property="og:description" content="BCA student and aspiring developer with Python and web development experience." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="images/hariom-hero.jpg" />
-
-  <!-- Favicon (optional: add images/favicon.png) -->
-  <link rel="icon" type="image/png" href="images/favicon.png" />
-
-  <!-- Styles & Fonts -->
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <!-- 3D Graphics Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hariom - Senior Web Developer</title>
+    <meta name="description" content="Professional portfolio of Hariom, Full-Stack Web Developer with expertise in React, Node.js, and Cloud Technologies">
+    <meta name="keywords" content="Web Developer, Full Stack, React, Node.js, JavaScript">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; overflow-x: hidden; }
+        #canvas-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; }
+        .gradient-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); }
+        .glow { box-shadow: 0 0 20px rgba(102,126,234,0.4); }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .float-animation { animation: float 3s ease-in-out infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .pulse-animation { animation: pulse 2s ease-in-out infinite; }
+    </style>
 </head>
-<body>
-    <!-- 3D Canvas Background -->
-  <canvas id="threejs-canvas" class="background-canvas"></canvas>
-  
-  <!-- Animated Particle System -->
-  <div id="particle-container" class="particle-container"></div>
+<body class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
+    <canvas id="canvas-bg"></canvas>
 
-  <!-- HEADER / NAVBAR -->
-  <header id="home">
-    <nav class="nav">
-      <div class="container nav-inner">
-        <div class="logo">Hariom</div>
-
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-
-        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </div>
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 glass z-50 border-b border-purple-500/20">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold gradient-text">HARIOM</h1>
+            <div class="flex gap-8 text-sm font-semibold">
+                <a href="#home" class="hover:text-purple-400 transition">Home</a>
+                <a href="#about" class="hover:text-purple-400 transition">About</a>
+                <a href="#projects" class="hover:text-purple-400 transition">Projects</a>
+                <a href="#contact" class="hover:text-purple-400 transition">Contact</a>
+            </div>
+        </div>
     </nav>
 
-    <section class="hero container">
-      <div class="hero-text reveal">
-        <p class="hero-subtitle" id="hero-subtitle">BCA Student</p>
-        <h1>Hi, I'm <span>Hariom</span><br />From Ballia, Uttar Pradesh</h1>
-        <p class="hero-desc">
-          Motivated BCA student with hands-on experience in Python, C, and basic web development
-          through multiple internships. Passionate about learning, building projects, and growing as a developer.
-        </p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn primary">View My Work</a>
-          <!--<a href="Hariom-Resume.pdf" class="btn outline" target="_blank" rel="noopener">Download Resume</a>-->
+    <!-- Hero Section -->
+    <section id="home" class="h-screen flex items-center justify-center relative">
+        <div class="text-center">
+            <h2 class="text-7xl font-bold mb-6 gradient-text float-animation">Full-Stack Web Developer</h2>
+            <p class="text-2xl text-gray-400 mb-8">Building beautiful & scalable digital experiences</p>
+            <div class="flex gap-6 justify-center">
+                <a href="#projects" class="px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg font-bold glow transition">View My Work</a>
+                <a href="#contact" class="px-8 py-3 border-2 border-purple-500 hover:bg-purple-500/10 rounded-lg font-bold transition">Get in Touch</a>
+            </div>
         </div>
-
-        <div class="hero-social">
-          <a href="https://github.com/pateljiop" target="_blank" aria-label="GitHub">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <!-- Update LinkedIn URL when ready -->
-          <a href="https://www.linkedin.com/in/pateljiop" target="_blank" aria-label="LinkedIn">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-img reveal">
-        <!-- Make sure this file exists: images/hariom-hero.jpg -->
-        <img src="images/hariom-hero.jpg" alt="Hariom working at computer" class="hero-photo" />
-      </div>
     </section>
-  </header>
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="container section-inner reveal">
-      <div class="section-title">
-        <h2>About Me</h2>
-        <span class="section-line"></span>
-      </div>
-
-      <div class="about-grid">
-        <div>
-          <p>
-            I am a BCA (3rd semester) student from Ballia, Uttar Pradesh, with an interest in
-            Python programming, C language and web development. Through internships at InternPE,
-            CodSoft and Prodigy InfoTech, I have worked on mini-projects, built web pages and
-            improved my problem-solving skills.
-          </p>
-          <p>
-            I enjoy learning new technologies, writing clean code and turning ideas into working projects.
-            My goal is to grow as a software / web developer and contribute to real-world applications.
-          </p>
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 gradient-text">About Me</h2>
+        <div class="grid md:grid-cols-2 gap-12">
+            <div class="glass p-8 rounded-xl">
+                <h3 class="text-2xl font-bold mb-4">Who I Am</h3>
+                <p class="text-gray-300 leading-relaxed">I'm a passionate full-stack web developer with 2+ years of experience building modern web applications. Specialized in React, Node.js, and cloud technologies. I love turning complex problems into simple, beautiful solutions.</p>
+            </div>
+            <div class="space-y-4">
+                <div class="glass p-4 rounded-lg">✨ React, Vue, TypeScript</div>
+                <div class="glass p-4 rounded-lg">⚙️ Node.js, Express, MongoDB</div>
+                <div class="glass p-4 rounded-lg">☁️ AWS, Docker, CI/CD</div>
+                <div class="glass p-4 rounded-lg">🎨 Tailwind, GSAP, Three.js</div>
+            </div>
         </div>
+    </section>
 
-        <div class="about-info">
-          <div><span>Name:</span> Hariom</div>
-          <div><span>Degree:</span> BCA (3rd Semester)</div>
-          <div><span>Location:</span> Ballia, Uttar Pradesh</div>
-          <div><span>Email:</span> <a href="mailto:ahuzahariom@gmail.com">ahuzahariom@gmail.com</a></div>
-        </div>
-      </div>
-
-      <div class="about-columns">
-        <div class="about-column">
-          <h3>Skills</h3>
-          <div class="tag-list">
-            <span class="tag">Python (Basics)</span>
-            <span class="tag">C Language (Basics)</span>
-            <span class="tag">HTML &amp; CSS</span>
-            <span class="tag">MS Word</span>
-            <span class="tag">MS Excel</span>
-            <span class="tag">PowerPoint</span>
-            <span class="tag">Computer Fundamentals</span>
-            <span class="tag">Troubleshooting &amp; Basic Networking</span>
-          </div>
-        </div>
-
-        <div class="about-column">
-          <h3>Experience</h3>
-          <ul>
-            <li>
-              <strong>Python Programming Intern – InternPE</strong><br />
-              Feb 2024 – Mar 2024
-            </li>
-            <li>
-              <strong>Python Programming Intern – CodSoft</strong><br />
-              Jan 2024 – Feb 2024
-            </li>
-            <li>
-              <strong>Web Development Intern – Prodigy InfoTech</strong><br />
-              Mar 2024
-            </li>
-          </ul>
-        </div>
-
-        <div class="about-column">
-          <h3>Education</h3>
-          <ul>
-            <li><strong>BCA</strong> – Prof. Rajju Bhaiya University, Prayagraj (3rd Semester)</li>
-            <li><strong>12th</strong> – CBSE Board, 2022</li>
-            <li><strong>10th</strong> – CBSE Board, 2020</li>
-          </ul>
-        </div>
-
-        <div class="about-column">
-          <h3>Interests</h3>
-          <ul>
-            <li>Playing Kabaddi (teamwork & discipline)</li>
-            <li>Listening to music (focus & relaxation)</li>
-            <li>Following tech news & current affairs</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="section section-alt">
-    <div class="container section-inner reveal">
-      <div class="section-title">
-        <h2>What I Can Do</h2>
-        <span class="section-line"></span>
-      </div>
-
-      <div class="cards-grid">
-        <div class="card">
-          <i class="fa-solid fa-code card-icon"></i>
-          <h3>Web Development</h3>
-          <p>
-            Build simple, responsive portfolio and information websites using HTML and CSS,
-            suitable for individuals or small businesses.
-          </p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-terminal card-icon"></i>
-          <h3>Python Scripting</h3>
-          <p>
-            Write small command-line tools such as calculators, record systems and basic utilities
-            to automate simple tasks.
-          </p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-computer card-icon"></i>
-          <h3>System Support</h3>
-          <p>
-            Assist with basic computer setup, troubleshooting, and simple networking tasks using
-            my IT fundamentals knowledge.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <div class="container section-inner reveal">
-      <div class="section-title">
-        <h2>Projects</h2>
-        <span class="section-line"></span>
-      </div>
-
-      <div class="cards-grid">
-        <div class="card project-card">
-          <h3>220
-          </h3>
-          <p>A command-line calculator using functions, conditionals and user input.</p>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">CLI</span>
-          </div>
-        </div>
-
-        <div class="card project-card">
-          <h3>Student Record System</h3>
-          <p>
-            Menu-driven program using file handling to store and manage student records
-            (implemented in C / Python).
-          </p>
-          <div class="tags">
-            <span class="tag">C</span>
-            <span class="tag">File Handling</span>
-          </div>
-        </div>
-
-        <div class="card project-card">
-          <h3>Basic Web Page Design</h3>
-          <p>
-            Responsive web page created during web development internship,
-            focused on layout and clean UI.
-          </p>
-          <div class="tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-          </div>
-
-          <!-- New Projects from 2024 -->
-                <div class="card project-card">
-                  <h3>TaskMaster Web App</h3>
-                  <p>Full-stack task management application with real-time updates, user authentication, and responsive UI. Built with HTML, CSS, JavaScript, and Node.js.</p>
-                  <div class="tags">
-                    <span class="tag">Node.js</span>
-                    <span class="tag">Express</span>
-                    <span class="tag">MongoDB</span>
-                    <span class="tag">Full-Stack</span>
-                  </div>
-                  <a href="https://github.com/pateljiop/TaskMaster-Web-App" target="_blank" class="project-link">View on GitHub →</a>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 gradient-text">Featured Projects</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div class="glass p-6 rounded-xl hover:scale-105 transition duration-300 glow">
+                <h3 class="text-xl font-bold mb-3">TaskMaster Web App</h3>
+                <p class="text-gray-400 mb-4">Full-stack task management with real-time updates and authentication</p>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="px-3 py-1 bg-purple-500/30 text-purple-300 rounded-full text-sm">React</span>
+                    <span class="px-3 py-1 bg-purple-500/30 text-purple-300 rounded-full text-sm">Node.js</span>
                 </div>
+                <a href="https://github.com/pateljiop/TaskMaster-Web-App" target="_blank" class="mt-4 block text-purple-400 hover:text-purple-300">View on GitHub →</a>
+            </div>
 
-                <div class="card project-card">
-                  <h3>Data Analysis & Visualization</h3>
-                  <p>Python-based data analysis project using Pandas, NumPy, and Matplotlib. Includes real-world datasets, statistical analysis, and interactive visualizations for insights.</p>
-                  <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Pandas</span>
-                    <span class="tag">Data Analysis</span>
-                    <span class="tag">Visualization</span>
-                  </div>
-                  <a href="https://github.com/pateljiop/Data-Analysis-Visualization" target="_blank" class="project-link">View on GitHub →</a>
+            <!-- Project 2 -->
+            <div class="glass p-6 rounded-xl hover:scale-105 transition duration-300 glow">
+                <h3 class="text-xl font-bold mb-3">Data Analysis Dashboard</h3>
+                <p class="text-gray-400 mb-4">Python data visualization with interactive charts and insights</p>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="px-3 py-1 bg-blue-500/30 text-blue-300 rounded-full text-sm">Python</span>
+                    <span class="px-3 py-1 bg-blue-500/30 text-blue-300 rounded-full text-sm">Pandas</span>
                 </div>
+                <a href="https://github.com/pateljiop/Data-Analysis-Visualization" target="_blank" class="mt-4 block text-purple-400 hover:text-purple-300">View on GitHub →</a>
+            </div>
 
-                <div class="card project-card">
-                  <h3>RealTime Chat Application</h3>
-                  <p>Real-time chat application using Node.js, Express, Socket.io, and MongoDB. Features WebSocket communication, user authentication, message history, and typing indicators.</p>
-                  <div class="tags">
-                    <span class="tag">Node.js</span>
-                    <span class="tag">Socket.io</span>
-                    <span class="tag">Real-time</span>
-                    <span class="tag">WebSocket</span>
-                  </div>
-                  <a href="https://github.com/pateljiop/RealTime-Chat-Application" target="_blank" class="project-link">View on GitHub →</a>
+            <!-- Project 3 -->
+            <div class="glass p-6 rounded-xl hover:scale-105 transition duration-300 glow">
+                <h3 class="text-xl font-bold mb-3">RealTime Chat App</h3>
+                <p class="text-gray-400 mb-4">WebSocket-based messaging with user authentication and presence</p>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="px-3 py-1 bg-green-500/30 text-green-300 rounded-full text-sm">Socket.io</span>
+                    <span class="px-3 py-1 bg-green-500/30 text-green-300 rounded-full text-sm">Express</span>
                 </div>
+                <a href="https://github.com/pateljiop/RealTime-Chat-Application" target="_blank" class="mt-4 block text-purple-400 hover:text-purple-300">View on GitHub →</a>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="centered">
-        <a href="https://github.com/pateljiop" target="_blank" class="btn outline">
-          See More on GitHub&nbsp;→
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT (NETLIFY FORM) -->
-  <section id="contact" class="section section-alt">
-    <div class="container section-inner reveal">
-      <div class="section-title">
-        <h2>Contact Me</h2>
-        <span class="section-line"></span>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-info">
-          <p>
-            If you’d like to collaborate, offer guidance, or discuss opportunities,
-            feel free to reach out.
-          </p>
-
-          <p><i class="fa-solid fa-envelope"></i> ahuzahariom@gmail.com</p>
-          <p><i class="fa-solid fa-phone"></i> +91 XXXXX XXXXX</p>
-          <p><i class="fa-solid fa-location-dot"></i> Gauwapar, Ballia, Uttar Pradesh – 221718</p>
-
-          <div class="social-links">
-            <a href="https://github.com/pateljiop" target="_blank"><i class="fa-brands fa-github"></i></a>
-            <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-          </div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 gradient-text">Let's Connect</h2>
+        <div class="glass p-12 rounded-xl text-center">
+            <p class="text-2xl mb-8">I'm always interested in hearing about new projects and opportunities.</p>
+            <div class="flex justify-center gap-8 flex-wrap">
+                <a href="mailto:ahuzahariom@gmail.com" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg font-bold transition">Email Me</a>
+                <a href="https://github.com/pateljiop" target="_blank" class="px-6 py-3 border-2 border-purple-500 hover:bg-purple-500/10 rounded-lg font-bold transition">GitHub</a>
+                <a href="https://linkedin.com/in/pateljiop" target="_blank" class="px-6 py-3 border-2 border-purple-500 hover:bg-purple-500/10 rounded-lg font-bold transition">LinkedIn</a>
+            </div>
         </div>
+    </section>
 
-        <!-- Netlify form -->
-        <form class="contact-form" name="contact" method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="contact" />
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-          <button type="submit" class="btn primary">Send Message</button>
-          <p class="form-note">This form is powered by Netlify Forms.</p>
-        </form>
-      </div>
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-500 border-t border-purple-500/20">
+        <p>&copy; 2024 Hariom. All rights reserved.</p>
+    </footer>
 
-      <p class="copyright">
-        © 2024 Hariom. All Rights Reserved.
-      </p>
-    </div>
-  </section>
+    <script>
+        // Three.js Background
+        const canvas = document.getElementById('canvas-bg');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0x000000, 0.1);
+        camera.position.z = 3;
 
-  <script src="script.js"></script>
-    <!-- 3D Background Animation -->
-  <script src="three-d-background.js"></script>
-  
-  <!-- Interactive Effects -->
-  <script src="interactive-effects.js"></script>
+        const geometry = new THREE.IcosahedronGeometry(1, 3);
+        const materials = []
+        for (let i = 0; i < 5; i++) {
+            materials.push(new THREE.MeshPhongMaterial({ color: 0x667eea + i * 0x111111, emissive: 0x667eea, wireframe: true }));
+        }
+
+        const objects = [];
+        for (let i = 0; i < 5; i++) {
+            const mesh = new THREE.Mesh(geometry, materials[i]);
+            mesh.position.set((Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10);
+            mesh.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
+            mesh.velocity = { x: (Math.random() - 0.5) * 0.02, y: (Math.random() - 0.5) * 0.02, z: (Math.random() - 0.5) * 0.02 };
+            scene.add(mesh);
+            objects.push(mesh);
+        }
+
+        const light1 = new THREE.PointLight(0x667eea, 1.5, 100);
+        light1.position.set(5, 5, 5);
+        scene.add(light1);
+
+        const light2 = new THREE.PointLight(0x764ba2, 1, 100);
+        light2.position.set(-5, -5, 5);
+        scene.add(light2);
+
+        scene.add(new THREE.AmbientLight(0xffffff, 0.3));
+
+        function animate() {
+            requestAnimationFrame(animate);
+            objects.forEach(obj => {
+                obj.rotation.x += obj.velocity.x;
+                obj.rotation.y += obj.velocity.y;
+                obj.rotation.z += obj.velocity.z;
+                obj.position.x += (Math.random() - 0.5) * 0.02;
+                obj.position.y += (Math.random() - 0.5) * 0.02;
+                if (Math.abs(obj.position.x) > 5) obj.position.x *= -0.8;
+                if (Math.abs(obj.position.y) > 5) obj.position.y *= -0.8;
+            });
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
 </body>
 </html>
