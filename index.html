@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hariom Patel - Web Development Portfolio</title>
-    <meta name="description" content="Hariom Patel's Web Development Portfolio - Full Stack Developer, HTML, CSS, JavaScript">
-    <meta name="keywords" content="Web Developer, HTML, CSS, JavaScript, Portfolio">
+    <title>Hariom Patel - BCA Student & Aspiring Software Developer</title>
+    <meta name="description" content="Hariom Patel - Aspiring Software Developer | Python & Web Dev Intern | BCA Student">
+    <meta name="keywords" content="Web Developer, Python, JavaScript, HTML, CSS, Hariom Patel">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -15,6 +15,7 @@
         <div class="container">
             <div class="nav-brand">
                 <h1>Hariom Patel</h1>
+                <p class="nav-subtitle">BCA Student | Aspiring Developer</p>
             </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
@@ -34,9 +35,9 @@
     <!-- Hero Section -->
     <header class="hero" id="home">
         <div class="hero-content">
-            <h2 class="hero-title">Welcome to My Portfolio</h2>
-            <p class="hero-subtitle">I'm a passionate web developer creating beautiful and functional websites</p>
-            <a href="#projects" class="cta-button">View My Work</a>
+            <h2 class="hero-title">Hi, I'm Hariom Patel</h2>
+            <p class="hero-subtitle">Aspiring Software Developer | Python & Web Development Intern | Building innovative solutions</p>
+            <a href="#projects" class="cta-button">Explore My Work</a>
         </div>
         <canvas id="background-canvas"></canvas>
     </header>
@@ -47,228 +48,223 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Hello! I'm Hariom Patel, a beginner web developer passionate about learning and creating amazing web experiences. I specialize in front-end development with HTML, CSS, and JavaScript.</p>
-                    <p>With a focus on clean code and user-friendly designs, I aim to bring ideas to life on the web. I'm constantly learning new technologies and improving my skills to deliver better solutions.</p>
+                    <p>Hello! I'm Hariom, a BCA student (3rd Semester) from Bailia, Uttar Pradesh, currently pursuing my passion for software development. I'm an aspiring software developer and web development intern with a strong foundation in Python and web technologies.</p>
+                    <p>I'm passionate about creating elegant solutions to real-world problems. With expertise in full-stack development, data analysis, and AI/ML integration, I'm constantly pushing the boundaries of what's possible in software development.</p>
+                    <p>Currently, I'm working as a Python & Web Development Intern, gaining hands-on experience in building scalable applications and learning industry best practices. My goal is to become a proficient full-stack developer who can architect and implement complex systems.</p>
                     <p><a href="resume.html" class="resume-link">View My Resume</a></p>
                 </div>
                 <div class="about-stats">
                     <div class="stat">
+                        <h3>8+</h3>
+                        <p>Projects Built</p>
+                    </div>
+                    <div class="stat">
+                        <h3>57</h3>
+                        <p>GitHub Contributions</p>
+                    </div>
+                    <div class="stat">
                         <h3>10+</h3>
-                        <p>Projects Completed</p>
-                    </div>
-                    <div class="stat">
-                        <h3>3+</h3>
-                        <p>Years Learning</p>
-                    </div>
-                    <div class="stat">
-                        <h3>100%</h3>
-                        <p>Commitment</p>
+                        <p>Tech Skills</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <!-- Project Card 1 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/project1.jpg" alt="Project 1" onerror="this.src='https://via.placeholder.com/300x200?text=Project+1'">
+        <!-- Projects Section -->
+        <section class="projects" id="projects">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <svg class="project-image" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="100" height="100" fill="url(#grad1)" />
+                            <circle cx="50" cy="30" r="8" fill="white" />
+                            <path d="M 50 40 L 30 60 L 70 60 Z" fill="white" />
+                        </svg>
+                        <h3>TaskMaster Web App</h3>
+                        <p>Full-stack task management application with real-time updates, user authentication, and responsive UI built with HTML, CSS, JavaScript, and Node.js.</p>
+                        <a href="https://github.com/pateljiop/TaskMaster-Web-App" target="_blank">View on GitHub</a>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Portfolio Website</h3>
-                        <p class="project-description">A responsive portfolio website built with HTML, CSS, and JavaScript featuring smooth animations and modern design.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View Project</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Project Card 2 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/project2.jpg" alt="Project 2" onerror="this.src='https://via.placeholder.com/300x200?text=Project+2'">
+                    <div class="project-card">
+                        <svg class="project-image" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#f43f5e;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="100" height="100" fill="url(#grad2)" />
+                            <rect x="20" y="25" width="60" height="50" fill="white" opacity="0.8" />
+                            <circle cx="50" cy="50" r="5" fill="white" />
+                        </svg>
+                        <h3>Data Analysis Visualization</h3>
+                        <p>Python-based data analysis and visualization project using Pandas, NumPy, and Matplotlib. Includes real-world datasets and statistical analysis with interactive visualizations.</p>
+                        <a href="https://github.com/pateljiop/Data-Analysis-Visualization" target="_blank">View on GitHub</a>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Todo Application</h3>
-                        <p class="project-description">A fully functional todo application with add, delete, and mark complete features using vanilla JavaScript.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View Project</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Project Card 3 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/project3.jpg" alt="Project 3" onerror="this.src='https://via.placeholder.com/300x200?text=Project+3'">
+                    <div class="project-card">
+                        <svg class="project-image" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="100" height="100" fill="url(#grad3)" />
+                            <rect x="15" y="30" width="70" height="45" fill="none" stroke="white" stroke-width="2" />
+                            <line x1="25" y1="40" x2="75" y2="40" stroke="white" stroke-width="1.5" />
+                        </svg>
+                        <h3>Code Soft Projects</h3>
+                        <p>A series of coding challenge solutions demonstrating problem-solving skills in Python. Includes CODSOFT1, CODSOFT2, and CODSOFT3 internship projects.</p>
+                        <a href="https://github.com/pateljiop/CODSOFT3" target="_blank">View on GitHub</a>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Weather App</h3>
-                        <p class="project-description">A weather application that fetches real-time weather data and displays it with beautiful animations and icons.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">API</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View Project</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Project Card 4 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/project4.jpg" alt="Project 4" onerror="this.src='https://via.placeholder.com/300x200?text=Project+4'">
+                    <div class="project-card">
+                        <svg class="project-image" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="100" height="100" fill="url(#grad4)" />
+                            <polygon points="50,20 80,70 20,70" fill="white" />
+                        </svg>
+                        <h3>WebSocket Communication</h3>
+                        <p>Real-time WebSocket-based communication system featuring user authentication, message history, typing indicators, and online user status tracking.</p>
+                        <a href="https://github.com/pateljiop" target="_blank">View on GitHub</a>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Calculator App</h3>
-                        <p class="project-description">A sleek calculator application with support for basic arithmetic operations and keyboard shortcuts.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View Project</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Project Card 5 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/project5.jpg" alt="Project 5" onerror="this.src='https://via.placeholder.com/300x200?text=Project+5'">
+                    <div class="project-card">
+                        <svg class="project-image" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="100" height="100" fill="url(#grad5)" />
+                            <circle cx="35" cy="50" r="12" fill="white" />
+                            <circle cx="65" cy="50" r="12" fill="white" />
+                        </svg>
+                        <h3>Python Code Generator</h3>
+                        <p>Automated Python code generation tool for streamlining development workflows. Licensed under Apache License 2.0, built to boost productivity.</p>
+                        <a href="https://github.com/pateljiop/generator" target="_blank">View on GitHub</a>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Notes App</h3>
-                        <p class="project-description">A note-taking application with local storage functionality, allowing users to save and manage their notes.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">LocalStorage</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View Project</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Project Card 6 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/project6.jpg" alt="Project 6" onerror="this.src='https://via.placeholder.com/300x200?text=Project+6'">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Expense Tracker</h3>
-                        <p class="project-description">An expense tracker that helps users manage their finances with charts and categorized spending insights.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View Project</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
+                    <div class="project-card">
+                        <svg class="project-image" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="100" height="100" fill="url(#grad6)" />
+                            <path d="M 30 70 Q 50 30 70 70" fill="none" stroke="white" stroke-width="3" />
+                            <circle cx="30" cy="70" r="3" fill="white" />
+                            <circle cx="70" cy="70" r="3" fill="white" />
+                        </svg>
+                        <h3>Portfolio Website</h3>
+                        <p>Personal portfolio showcasing my projects and skills with 3D animations, responsive design, and interactive effects. Built with HTML, CSS, and Three.js.</p>
+                        <a href="https://github.com/pateljiop/portfolio" target="_blank">View on GitHub</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Frontend Development</h3>
-                    <ul class="skill-list">
-                        <li><span class="skill-name">HTML5</span> <span class="skill-level">Advanced</span></li>
-                        <li><span class="skill-name">CSS3</span> <span class="skill-level">Advanced</span></li>
-                        <li><span class="skill-name">JavaScript</span> <span class="skill-level">Intermediate</span></li>
-                        <li><span class="skill-name">Responsive Design</span> <span class="skill-level">Advanced</span></li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Platforms</h3>
-                    <ul class="skill-list">
-                        <li><span class="skill-name">Git & GitHub</span> <span class="skill-level">Intermediate</span></li>
-                        <li><span class="skill-name">VS Code</span> <span class="skill-level">Advanced</span></li>
-                        <li><span class="skill-name">Netlify</span> <span class="skill-level">Intermediate</span></li>
-                        <li><span class="skill-name">Chrome DevTools</span> <span class="skill-level">Advanced</span></li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Design & UX</h3>
-                    <ul class="skill-list">
-                        <li><span class="skill-name">UI Design</span> <span class="skill-level">Intermediate</span></li>
-                        <li><span class="skill-name">Animations</span> <span class="skill-level">Intermediate</span></li>
-                        <li><span class="skill-name">Accessibility</span> <span class="skill-level">Beginner</span></li>
-                        <li><span class="skill-name">Mobile-First</span> <span class="skill-level">Advanced</span></li>
-                    </ul>
+        <!-- Skills Section -->
+        <section class="skills" id="skills">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>C++</li>
+                            <li>C</li>
+                            <li>JavaScript</li>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Web Development</h3>
+                        <ul>
+                            <li>React.js</li>
+                            <li>Node.js</li>
+                            <li>Express.js</li>
+                            <li>Responsive Design</li>
+                            <li>UI/UX Design</li>
+                            <li>Web Animations</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools & Technologies</h3>
+                        <ul>
+                            <li>Git & GitHub</li>
+                            <li>VS Code</li>
+                            <li>Three.js</li>
+                            <li>Pandas & NumPy</li>
+                            <li>Matplotlib</li>
+                            <li>Netlify</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Soft Skills</h3>
+                        <ul>
+                            <li>Problem Solving</li>
+                            <li>Team Collaboration</li>
+                            <li>Communication</li>
+                            <li>Project Management</li>
+                            <li>Learning Agility</li>
+                            <li>Creativity</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <p class="contact-intro">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
-                <div class="contact-links">
-                    <a href="mailto:pateljiop@gmail.com" class="contact-link">
-                        <i class="fas fa-envelope"></i> Email
-                    </a>
-                    <a href="https://github.com" target="_blank" class="contact-link">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                    <a href="https://linkedin.com" target="_blank" class="contact-link">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="https://twitter.com" target="_blank" class="contact-link">
-                        <i class="fab fa-twitter"></i> Twitter
-                    </a>
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Let's Connect</h3>
+                        <p>I'm always interested in hearing about new projects and opportunities. Feel free to reach out!</p>
+                        <div class="contact-links">
+                            <a href="https://github.com/pateljiop" target="_blank">GitHub</a>
+                            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                            <a href="mailto:hariom@example.com">Email</a>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Hariom Patel. All rights reserved.</p>
-            <p>Designed and developed with <i class="fas fa-heart"></i> by Hariom Patel</p>
-        </div>
+    <footer>
+        <p>&copy; 2024 Hariom Patel. All rights reserved.</p>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="three-d-background.js"></script>
     <script src="script.js"></script>
     <script src="interactive-effects.js"></script>
+    <script src="three-d-background.js"></script>
 </body>
 </html>
