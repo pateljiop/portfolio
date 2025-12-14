@@ -5,256 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hariom Patel - Portfolio</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow-x: hidden;
-        }
-
-        .page {
-            display: none;
-            width: 100%;
-            min-height: 100vh;
-            padding: 40px 20px;
-            animation: fadeIn 0.8s ease-in;
-        }
-
-        .page.active {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* PAGE 1: BLUE - Floating Animation */
-        .page1 {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .page1 h1 {
-            font-size: 4em;
-            margin-bottom: 20px;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .page1 p {
-            font-size: 1.5em;
-            max-width: 600px;
-            text-align: center;
-            animation: float 3s ease-in-out infinite 0.2s backwards;
-        }
-
-        /* PAGE 2: ORANGE - Pulse Animation */
-        .page2 {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .page2 h1 {
-            font-size: 4em;
-            margin-bottom: 20px;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        .page2 .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-            max-width: 800px;
-        }
-
-        .page2 .skill-item {
-            background: rgba(255,255,255,0.2);
-            padding: 20px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            animation: pulse 2s ease-in-out infinite;
-            animation-delay: calc(0.1s * var(--skill-index));
-        }
-
-        /* PAGE 3: GREEN - Slide Animation */
-        .page3 {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
-        }
-
-        @keyframes slideIn {
-            from { transform: translateX(-100px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-
-        .page3 h1 {
-            font-size: 4em;
-            margin-bottom: 20px;
-            animation: slideIn 0.8s ease-out;
-        }
-
-        .page3 .project-item {
-            background: rgba(255,255,255,0.15);
-            padding: 30px;
-            margin: 15px 0;
-            border-radius: 10px;
-            max-width: 600px;
-            animation: slideIn 0.8s ease-out;
-            animation-delay: calc(0.2s * var(--project-index));
-        }
-
-        /* PAGE 4: RED - Rotate Animation */
-        .page4 {
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-            color: #333;
-        }
-
-        @keyframes rotate360 {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .page4 h1 {
-            font-size: 4em;
-            margin-bottom: 40px;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .page4 .contact-icon {
-            width: 100px;
-            height: 100px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2em;
-            margin: 15px;
-            animation: rotate360 4s linear infinite;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        /* PAGE 5: PURPLE - Wave Animation */
-        .page5 {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            color: #333;
-        }
-
-        @keyframes wave {
-            0%, 100% { transform: rotate(0deg); }
-            10% { transform: rotate(14deg); }
-            20% { transform: rotate(-8deg); }
-            30% { transform: rotate(14deg); }
-            40% { transform: rotate(-4deg); }
-            50% { transform: rotate(10deg); }
-            60% { transform: rotate(0deg); }
-        }
-
-        .page5 h1 {
-            font-size: 4em;
-            margin-bottom: 20px;
-            color: #333;
-            animation: wave 0.6s infinite;
-            transform-origin: bottom center;
-        }
-
-        .page5 p {
-            font-size: 1.2em;
-            max-width: 600px;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        /* Navigation */
-        .nav-dots {
-            position: fixed;
-            right: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 1000;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.5);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid white;
-        }
-
-        .dot.active {
-            background: white;
-            width: 15px;
-            height: 15px;
-        }
-
-        .nav-buttons {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 20px;
-            z-index: 1000;
-        }
-
-        .btn {
-            padding: 12px 30px;
-            background: rgba(255,255,255,0.3);
-            border: 2px solid white;
-            color: white;
-            cursor: pointer;
-            border-radius: 50px;
-            font-size: 1em;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .btn:hover {
-            background: rgba(255,255,255,0.5);
-            transform: translateY(-2px);
-        }
-
-        .page-content {
-            text-align: center;
-        }
-
-        .content-box {
-            background: rgba(255,255,255,0.1);
-            padding: 40px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            max-width: 800px;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
+        
+        .page { display: none; width: 100%; min-height: 100vh; padding: 40px 20px; animation: fadeIn 0.8s ease-in; position: relative; overflow: hidden; }
+        .page.active { display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        @keyframes slideIn { from { transform: translateX(-100px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        @keyframes rotate360 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes wave { 0%, 100% { transform: rotate(0deg); } 10% { transform: rotate(14deg); } 20% { transform: rotate(-8deg); } 30% { transform: rotate(14deg); } 40% { transform: rotate(-4deg); } 50% { transform: rotate(10deg); } 60% { transform: rotate(0deg); } }
+        
+        /* Background Elements */
+        .bg-shapes { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+        .shape { position: absolute; border-radius: 50%; opacity: 0.1; }
+        .shape:nth-child(1) { width: 300px; height: 300px; top: -50px; left: -50px; animation: float 6s infinite; }
+        .shape:nth-child(2) { width: 200px; height: 200px; bottom: 50px; right: 50px; animation: float 7s infinite 1s; }
+        .shape:nth-child(3) { width: 150px; height: 150px; top: 50%; left: 30%; animation: pulse 4s infinite; }
+        .shape:nth-child(4) { width: 250px; height: 250px; bottom: 10%; right: 10%; animation: float 8s infinite 2s; }
+        
+        .page1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .page1 .shape { background: white; }
+        .page1 h1 { font-size: 4em; animation: float 3s infinite; position: relative; z-index: 1; }
+        .page1 p { font-size: 1.5em; max-width: 600px; text-align: center; animation: float 3s infinite 0.2s backwards; position: relative; z-index: 1; }
+        
+        .page2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; }
+        .page2 .shape { background: white; }
+        .page2 h1 { font-size: 4em; animation: pulse 2s infinite; position: relative; z-index: 1; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin-top: 40px; max-width: 800px; position: relative; z-index: 1; }
+        .skill-item { background: rgba(255,255,255,0.2); padding: 20px; border-radius: 10px; backdrop-filter: blur(10px); animation: pulse 2s infinite; border: 2px solid rgba(255,255,255,0.3); }
+        
+        .page3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; }
+        .page3 .shape { background: white; }
+        .page3 h1 { font-size: 4em; animation: slideIn 0.8s ease-out; position: relative; z-index: 1; }
+        .project-item { background: rgba(255,255,255,0.15); padding: 30px; margin: 15px 0; border-radius: 10px; max-width: 600px; animation: slideIn 0.8s ease-out; border-left: 5px solid white; position: relative; z-index: 1; }
+        
+        .page4 { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: #333; }
+        .page4 .shape { background: white; }
+        .page4 h1 { font-size: 4em; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); position: relative; z-index: 1; }
+        .contact-icon { width: 100px; height: 100px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2em; margin: 15px; animation: rotate360 4s linear infinite; box-shadow: 0 5px 15px rgba(0,0,0,0.3); border: 3px solid rgba(255,255,255,0.5); position: relative; z-index: 1; }
+        
+        .page5 { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #333; }
+        .page5 .shape { background: rgba(255,255,255,0.3); }
+        .page5 h1 { font-size: 4em; animation: wave 0.6s infinite; transform-origin: bottom center; position: relative; z-index: 1; }
+        .content-box { background: rgba(255,255,255,0.2); padding: 40px; border-radius: 20px; backdrop-filter: blur(10px); max-width: 800px; border: 2px solid rgba(255,255,255,0.4); position: relative; z-index: 1; }
+        
+        .page-content { text-align: center; position: relative; z-index: 1; }
+        
+        .nav-dots { position: fixed; right: 30px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 15px; z-index: 1000; }
+        .dot { width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; transition: all 0.3s; border: 2px solid white; }
+        .dot.active { background: white; width: 15px; height: 15px; }
+        
+        .nav-buttons { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; gap: 20px; z-index: 1000; }
+        .btn { padding: 12px 30px; background: rgba(255,255,255,0.3); border: 2px solid white; color: white; cursor: pointer; border-radius: 50px; font-size: 1em; transition: all 0.3s; backdrop-filter: blur(10px); font-weight: bold; }
+        .btn:hover { background: rgba(255,255,255,0.5); transform: translateY(-2px); }
     </style>
 </head>
 <body>
-    <!-- PAGE 1: HOME -->
     <div class="page page1 active">
+        <div class="bg-shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
         <div class="page-content">
             <h1>👋 Hi, I'm Hariom</h1>
             <p>Python Developer | Full-Stack Engineer | AI & NLP Specialist</p>
@@ -262,44 +73,35 @@
         </div>
     </div>
 
-    <!-- PAGE 2: SKILLS -->
     <div class="page page2">
+        <div class="bg-shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
         <div class="page-content">
             <h1>💪 Skills</h1>
             <div class="skills-grid">
-                <div class="skill-item" style="--skill-index: 1;">Python</div>
-                <div class="skill-item" style="--skill-index: 2;">JavaScript</div>
-                <div class="skill-item" style="--skill-index: 3;">React</div>
-                <div class="skill-item" style="--skill-index: 4;">Django</div>
-                <div class="skill-item" style="--skill-index: 5;">Data Science</div>
-                <div class="skill-item" style="--skill-index: 6;">Web Scraping</div>
-                <div class="skill-item" style="--skill-index: 7;">AI/ML</div>
-                <div class="skill-item" style="--skill-index: 8;">SQL</div>
+                <div class="skill-item">Python</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">React</div>
+                <div class="skill-item">Django</div>
+                <div class="skill-item">Data Science</div>
+                <div class="skill-item">Web Scraping</div>
+                <div class="skill-item">AI/ML</div>
+                <div class="skill-item">SQL</div>
             </div>
         </div>
     </div>
 
-    <!-- PAGE 3: PROJECTS -->
     <div class="page page3">
+        <div class="bg-shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
         <div class="page-content">
             <h1>🚀 Projects</h1>
-            <div class="project-item" style="--project-index: 1;">
-                <h3>4 Production Projects Shipped</h3>
-                <p>With 100% code quality and zero critical bugs</p>
-            </div>
-            <div class="project-item" style="--project-index: 2;">
-                <h3>1,000+ Data Points Extracted</h3>
-                <p>Via advanced web scraping solutions</p>
-            </div>
-            <div class="project-item" style="--project-index: 3;">
-                <h3>500+ Financial Transactions Tracked</h3>
-                <p>With 99.9% uptime reliability</p>
-            </div>
+            <div class="project-item"><h3>4 Production Projects Shipped</h3><p>With 100% code quality and zero critical bugs</p></div>
+            <div class="project-item"><h3>1,000+ Data Points Extracted</h3><p>Via advanced web scraping solutions</p></div>
+            <div class="project-item"><h3>500+ Financial Transactions Tracked</h3><p>With 99.9% uptime reliability</p></div>
         </div>
     </div>
 
-    <!-- PAGE 4: CONTACT -->
     <div class="page page4">
+        <div class="bg-shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
         <div class="page-content">
             <h1>📧 Get In Touch</h1>
             <div style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 40px;">
@@ -308,28 +110,21 @@
                 <div class="contact-icon">💼</div>
                 <div class="contact-icon">🌐</div>
             </div>
-            <p style="margin-top: 40px; font-size: 1.2em; color: white;">
-                Email: ahujahariom8@gmail.com<br>
-                GitHub: github.com/pateljiop<br>
-                LinkedIn: linkedin.com/in/pateljiop
-            </p>
+            <p style="margin-top: 40px; font-size: 1.2em; color: white;">Email: ahujahariom8@gmail.com<br>GitHub: github.com/pateljiop<br>LinkedIn: linkedin.com/in/pateljiop</p>
         </div>
     </div>
 
-    <!-- PAGE 5: CALL TO ACTION -->
     <div class="page page5">
+        <div class="bg-shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
         <div class="page-content">
             <h1>✨ Let's Build Something Amazing</h1>
             <div class="content-box">
                 <p>Open to Python Developer, Full-Stack & AI Automation roles</p>
-                <p style="margin-top: 20px; font-size: 1.1em; color: #666;">
-                    Ready to contribute to innovative projects and grow together
-                </p>
+                <p style="margin-top: 20px; font-size: 1.1em; color: #333;">Ready to contribute to innovative projects and grow together</p>
             </div>
         </div>
     </div>
 
-    <!-- Navigation -->
     <div class="nav-dots">
         <div class="dot active" onclick="goToPage(0)"></div>
         <div class="dot" onclick="goToPage(1)"></div>
@@ -351,28 +146,15 @@
         function showPage(n) {
             pages.forEach(page => page.classList.remove('active'));
             dots.forEach(dot => dot.classList.remove('active'));
-            
             pages[n].classList.add('active');
             dots[n].classList.add('active');
-            
             currentPage = n;
         }
 
-        function nextPage() {
-            currentPage = (currentPage + 1) % pages.length;
-            showPage(currentPage);
-        }
+        function nextPage() { currentPage = (currentPage + 1) % pages.length; showPage(currentPage); }
+        function previousPage() { currentPage = (currentPage - 1 + pages.length) % pages.length; showPage(currentPage); }
+        function goToPage(n) { showPage(n); }
 
-        function previousPage() {
-            currentPage = (currentPage - 1 + pages.length) % pages.length;
-            showPage(currentPage);
-        }
-
-        function goToPage(n) {
-            showPage(n);
-        }
-
-        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight') nextPage();
             if (e.key === 'ArrowLeft') previousPage();
