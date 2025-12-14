@@ -772,3 +772,230 @@ button:active {
     font-weight: bold;
     margin-right: 8px;
 }
+
+/* ========== ADVANCED ANIMATIONS ========== */
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Glow Animation */
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(102, 126, 234, 0.5), 0 0 10px rgba(102, 126, 234, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.8), 0 0 30px rgba(102, 126, 234, 0.5); }
+}
+
+/* Gradient Animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+/* Rotate Animation */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Wave Animation */
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(10deg); }
+  75% { transform: rotate(-10deg); }
+}
+
+/* Apply Animations */
+.section {
+  animation: fadeIn 0.8s ease-in, glow 3s ease-in-out infinite;
+}
+
+.skill-card {
+  animation: float 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  animation: float 3s ease-in-out infinite, pulse 0.5s ease-in-out;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+  transform: scale(1.1);
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shimmer 3s infinite;
+}
+
+.project-card:hover {
+  animation: bounce 0.6s ease-in-out;
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+  transform: translateY(-10px) scale(1.02);
+}
+
+.tech-tag {
+  display: inline-block;
+  transition: all 0.3s ease;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.tech-tag:hover {
+  animation: none;
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.btn:hover {
+  animation: pulse 0.4s ease-in-out, bounce 0.6s ease-in-out;
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.contact-buttons a {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.contact-buttons a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  animation: none;
+  transition: left 0.3s ease;
+}
+
+.contact-buttons a:hover::before {
+  animation: shimmer 0.6s ease-in-out;
+  left: 100%;
+}
+
+.contact-buttons a:hover {
+  transform: translateY(-3px) rotate(2deg) scale(1.05);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+.stat-box {
+  animation: fadeIn 0.8s ease-in;
+  transition: all 0.3s ease;
+}
+
+.stat-box:hover {
+  animation: bounce 0.6s ease-in-out, pulse 0.8s ease-in-out;
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.navbar {
+  animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  animation: fadeInDown 1s ease-in, float 4s ease-in-out infinite;
+}
+
+.hero p {
+  animation: fadeInUp 1s ease-in 0.2s both, float 4s ease-in-out infinite 0.3s;
+}
+
+.hero .btn {
+  animation: fadeInUp 1s ease-in 0.4s both;
+  transition: all 0.3s ease;
+}
+
+.hero .btn:hover {
+  animation: pulse 0.4s ease-in-out, float 2s ease-in-out infinite;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+}
+
+/* Stagger Animation for Cards */
+.skills-grid .skill-card:nth-child(1) { animation-delay: 0s; }
+.skills-grid .skill-card:nth-child(2) { animation-delay: 0.1s; }
+.skills-grid .skill-card:nth-child(3) { animation-delay: 0.2s; }
+.skills-grid .skill-card:nth-child(4) { animation-delay: 0.3s; }
+.skills-grid .skill-card:nth-child(5) { animation-delay: 0.4s; }
+.skills-grid .skill-card:nth-child(6) { animation-delay: 0.5s; }
+
+.projects-grid .project-card:nth-child(1) { animation-delay: 0s; }
+.projects-grid .project-card:nth-child(2) { animation-delay: 0.1s; }
+.projects-grid .project-card:nth-child(3) { animation-delay: 0.2s; }
+.projects-grid .project-card:nth-child(4) { animation-delay: 0.3s; }
+
+/* Background Animation */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #667eea, #764ba2, #667eea, #764ba2);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Text Shadow Glow */
+.hero h1 {
+  text-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Enhanced Transition Timing */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Loading Animation */
+@keyframes loading {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.loading {
+  animation: loading 1.5s ease-in-out infinite;
+    }
