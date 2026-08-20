@@ -5,5 +5,11 @@
 
 ---
 
-# portfolio
-https://hariomdev.netlify.app/
+# Portfolio
+
+Personal portfolio work and experiments by Hariom.
+
+**Hariom Builds** · Code • Create • Automate
+
+🌐 Portfolio: https://hariom-portfolio.pages.dev/
+🔗 GitHub: https://github.com/pateljiop
