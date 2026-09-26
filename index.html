@@ -1,213 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hariom Builds — Portfolio of Hariom Patel, a BCA student and aspiring developer building Python, web development, automation, AI and NLP projects.">
-  <meta name="keywords" content="Hariom Builds, Hariom Patel, Hariom portfolio, Python Developer, Web Developer, BCA Student, AI, NLP, Web Development, Automation">
-  <meta name="author" content="Hariom Patel">
-  <meta name="application-name" content="Hariom Builds">
-  <meta name="google-site-verification" content="yKWRx6xDyhBiOY9X3_IOySFlVa7JZ823bUBKD4ljvw0">
-  <link rel="canonical" href="https://hariom-portfolio.pages.dev/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Hariom Builds">
-  <meta property="og:title" content="Hariom Builds — BCA Student & Aspiring Developer">
-  <meta property="og:description" content="Portfolio of Hariom Patel — Python, web development, automation, AI and NLP projects.">
-  <meta property="og:url" content="https://hariom-portfolio.pages.dev/">
-  <title>Hariom Builds — BCA Student & Aspiring Developer</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Hariom Builds",
-    "alternateName": "Hariom Patel Portfolio",
-    "url": "https://hariom-portfolio.pages.dev/"
-  }
-  </script>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; color: #333; }
-    .navbar { background: rgba(255,255,255,0.95); box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 1rem 2rem; position: sticky; top: 0; z-index: 100; }
-    .navbar a { margin: 0 1.5rem; text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
-    .navbar a:hover { color: #667eea; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
-    .hero { text-align: center; color: white; padding: 4rem 0; }
-    .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; animation: fadeInDown 1s ease-in; }
-    .hero p { font-size: 1.3rem; margin-bottom: 2rem; animation: fadeInUp 1s ease-in; }
-    .btn { display: inline-block; padding: 0.8rem 2rem; background: #667eea; color: white; border-radius: 50px; text-decoration: none; transition: all 0.3s; font-weight: 600; }
-    .btn:hover { background: #764ba2; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-    .section { background: white; border-radius: 10px; padding: 2rem; margin: 2rem 0; box-shadow: 0 5px 20px rgba(0,0,0,0.1); animation: fadeIn 0.8s ease-in; }
-    .section h2 { color: #667eea; margin-bottom: 1.5rem; font-size: 2rem; border-bottom: 3px solid #667eea; padding-bottom: 1rem; }
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-    .skill-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 8px; text-align: center; transition: transform 0.3s; }
-    .skill-card:hover { transform: translateY(-5px); }
-    .skill-card h3 { margin-bottom: 1rem; }
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-    .project-card { border: 2px solid #667eea; border-radius: 10px; padding: 1.5rem; transition: all 0.3s; }
-    .project-card:hover { box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3); transform: translateY(-5px); }
-    .project-card h3 { color: #667eea; margin-bottom: 0.5rem; }
-    .project-card .tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
-    .tech-tag { background: #667eea; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; }
-    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; text-align: center; margin: 2rem 0; }
-    .stat-box { padding: 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 8px; }
-    .stat-box h3 { font-size: 2rem; margin-bottom: 0.5rem; }
-    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .contact-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0; }
-    .contact-buttons a { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: #667eea; color: white; text-decoration: none; border-radius: 50px; transition: all 0.3s; }
-    .contact-buttons a:hover { background: #764ba2; transform: scale(1.05); }
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Hariom Builds — Software Developer & Automation Specialist. AI systems, web applications, automation and developer tools.">
+<meta name="author" content="Hariom Patel"><meta name="theme-color" content="#08090d">
+<link rel="canonical" href="https://pateljiop.com/">
+<title>HARIOM — Software Developer & Automation Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<div id="progress"></div><div class="grain"></div>
+<header class="nav"><a class="brand" href="#home"><span class="brand-mark">H</span><span>HARIOM</span></a><nav><a href="#about">About</a><a href="#work">Work</a><a href="#systems">Systems</a><a href="#stack">Stack</a><a href="#contact">Contact</a></nav><a class="nav-cta" href="mailto:hariompatel.dev@gmail.com">Let's build <span>↗</span></a></header>
 
-  <!-- Hero Section -->
-  <section id="home" class="container hero">
-    <h1>👋 Hariom Patel</h1>
-    <p>Python Developer | Full-Stack Developer | AI & NLP Specialist</p>
-    <a href="#projects" class="btn">Explore My Work</a>
-  </section>
+<main id="home">
+<section class="hero">
+<div class="hero-bg"></div><div class="hero-grid"></div>
+<div class="hero-copy reveal">
+<p class="eyebrow"><span class="dot"></span> OPEN TO REMOTE OPPORTUNITIES</p>
+<h1>HARIOM<br><em>BUILDS.</em></h1>
+<p class="hero-sub">Software Developer & Automation Specialist building practical web apps, AI-powered workflows and tools that turn ideas into working systems.</p>
+<div class="hero-actions"><a class="btn primary" href="#work">Explore work <span>↓</span></a><a class="btn ghost" href="https://github.com/pateljiop" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+</div>
+<div class="hero-meta"><span>PRAYAGRAJ / INDIA</span><span>LEARN • PRACTICE • BUILD • IMPROVE</span><span>01 — 06</span></div>
+</section>
 
-  <!-- About Section -->
-  <section id="about" class="container">
-    <div class="section">
-      <h2>🎯 About Me</h2>
-      <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
-        Innovative Python Developer with 2 professional internships and 4 production-ready projects. Specialized in building scalable applications, 
-        automating complex processes, and implementing AI/NLP solutions with 100% code quality compliance and zero critical bugs.
-      </p>
-      <div class="stats">
-        <div class="stat-box">
-          <h3>4</h3>
-          <p>Projects Shipped</p>
-        </div>
-        <div class="stat-box">
-          <h3>2</h3>
-          <p>Internships</p>
-        </div>
-        <div class="stat-box">
-          <h3>1000+</h3>
-          <p>Data Points</p>
-        </div>
-        <div class="stat-box">
-          <h3>100%</h3>
-          <p>Code Quality</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<section id="about" class="about section">
+<div class="section-head reveal"><span>01 / ABOUT</span><h2>Not just learning code.<br><span>Building with it.</span></h2></div>
+<div class="about-grid">
+<div class="about-image reveal"><img src="images/hariom-workspace.jpg" alt="Hariom's developer workspace"><div class="image-tag">REAL WORKSPACE / LIVE SETUP</div></div>
+<div class="about-copy reveal"><p class="lead">I'm Hariom Patel — a developer focused on Python, web development, automation and AI integrations.</p><p>I like taking a problem, breaking it into systems, building the smallest useful version, testing it, and improving it. My portfolio is a record of that process — from small utilities to agentic automation.</p><div class="principles"><div><b>01</b><span>Learn continuously</span></div><div><b>02</b><span>Practice by shipping</span></div><div><b>03</b><span>Build useful systems</span></div><div><b>04</b><span>Improve what exists</span></div></div></div>
+</div>
+</section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="container">
-    <div class="section">
-      <h2>🛠️ Technical Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h3>🖥️ Languages</h3>
-          <p>Python (Expert), C, C++, JavaScript, HTML5, CSS3</p>
-        </div>
-        <div class="skill-card">
-          <h3>🚀 Frameworks</h3>
-          <p>Django, Flask, FastAPI, React.js, Node.js</p>
-        </div>
-        <div class="skill-card">
-          <h3>📊 Data Science</h3>
-          <p>Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn</p>
-        </div>
-        <div class="skill-card">
-          <h3>💫 Web Scraping</h3>
-          <p>BeautifulSoup, Selenium, Scrapy, APScheduler</p>
-        </div>
-        <div class="skill-card">
-          <h3>🗄️ Databases</h3>
-          <p>MongoDB, MySQL, SQL, Data Normalization</p>
-        </div>
-        <div class="skill-card">
-          <h3>🔧 Tools</h3>
-          <p>Git, GitHub, VS Code, PyCharm, Netlify</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<section id="work" class="work section">
+<div class="section-head reveal"><span>02 / SELECTED WORK</span><h2>Projects with a<br><span>purpose.</span></h2></div>
+<div class="project-list">
+<article class="project featured reveal"><div class="project-visual"><div class="visual-glow"></div><div class="terminal"><div class="term-top"><i></i><i></i><i></i><span>hariom-ai / orchestrator</span></div><pre><code><span class="muted">agent</span>.<span class="cyan">plan</span>(task)
+  ↓
+<span class="cyan">route</span> → model / tool / browser
+  ↓
+<span class="cyan">execute</span> → verify → report
+<span class="ok">● pipeline stable</span></code></pre></div></div><div class="project-info"><span class="project-no">01</span><h3>Hariom AI</h3><p>AI-agent workspace exploring task planning, multi-provider models, tool execution and computer/browser automation.</p><div class="tags"><span>Python</span><span>Agents</span><span>Automation</span><span>APIs</span></div><a href="https://github.com/pateljiop/hariom-ai" target="_blank" rel="noreferrer">View repository ↗</a></div></article>
+<article class="project reveal"><div class="project-image"><img src="images/hariom-fullstack.jpg" alt="Full stack architecture"></div><div class="project-info"><span class="project-no">02</span><h3>Expense Tracker</h3><p>A lightweight finance web app with real-time balance tracking, categorisation, transaction history and CSV export.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>LocalStorage</span></div><a href="https://pateljiop.github.io/Expense-Tracker/" target="_blank" rel="noreferrer">Live project ↗</a></div></article>
+<article class="project reveal"><div class="project-image blueprint"><div class="blueprint-core">H</div><span>WEB → API → DATA → AUTOMATION</span></div><div class="project-info"><span class="project-no">03</span><h3>Web Scraper & Data Pipeline</h3><p>Automated extraction and cleaning workflow for page titles, metadata and links with structured CSV/JSON output.</p><div class="tags"><span>Python</span><span>BeautifulSoup</span><span>Requests</span><span>CSV / JSON</span></div></div></article>
+<article class="project reveal"><div class="project-image"><img src="images/hariom-tech.jpg" alt="Developer technology visual"></div><div class="project-info"><span class="project-no">04</span><h3>Python Personal Assistant</h3><p>Desktop and CLI automation utility for system actions, browser/app launching, file operations and reusable workflows.</p><div class="tags"><span>Python</span><span>OOP</span><span>OS / Sys</span><span>CLI</span></div></div></article>
+</div>
+</section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="container">
-    <div class="section">
-      <h2>🚀 Featured Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>🌐 Web-Scraper-Tool</h3>
-          <p><strong>Enterprise Data Extraction Platform</strong></p>
-          <p style="margin-top: 0.8rem;">Extracted 1,000+ data points with intelligent scheduling. Saved 100+ hours of manual work.</p>
-          <div class="tech">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">BeautifulSoup</span>
-            <span class="tech-tag">APScheduler</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <h3>💰 Expense-Tracker</h3>
-          <p><strong>Smart Finance Management System</strong></p>
-          <p style="margin-top: 0.8rem;">Tracked 500+ transactions with 99.9% uptime. Real-time interactive dashboards.</p>
-          <div class="tech">
-            <span class="tech-tag">Flask</span>
-            <span class="tech-tag">MongoDB</span>
-            <span class="tech-tag">Matplotlib</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <h3>🤖 AI-Personal-Assistant</h3>
-          <p><strong>Intelligent Automation Engine</strong></p>
-          <p style="margin-top: 0.8rem;">NLP-powered voice command system. Automated task execution with multi-API integration.</p>
-          <div class="tech">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">NLP</span>
-            <span class="tech-tag">Voice Processing</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <h3>📊 Data-Analysis-Visualization</h3>
-          <p><strong>Statistical Intelligence Platform</strong></p>
-          <p style="margin-top: 0.8rem;">Analyzed 10,000+ records. Created 15+ interactive visualizations with trend analysis.</p>
-          <div class="tech">
-            <span class="tech-tag">Pandas</span>
-            <span class="tech-tag">NumPy</span>
-            <span class="tech-tag">Seaborn</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<section id="systems" class="systems section">
+<div class="section-head reveal"><span>03 / HOW I BUILD</span><h2>From workspace<br>to <span>system.</span></h2></div>
+<div class="system-sequence">
+<div class="system-card reveal"><span>01</span><img src="images/hariom-workspace.jpg" alt="Real developer workspace"><b>REAL WORKSPACE</b><small>IDEAS → CODE → TEST</small></div>
+<div class="connector">→</div>
+<div class="system-card reveal"><span>02</span><img src="images/hariom-fullstack.jpg" alt="Full stack system architecture"><b>FULL-STACK LAYER</b><small>UI → API → BACKEND → DATA</small></div>
+<div class="connector">→</div>
+<div class="system-card reveal blueprint-card"><span>03</span><div class="system-diagram"><div class="orbit o1"></div><div class="orbit o2"></div><strong>MAIN AI CORE</strong><small>AUTONOMOUS ORCHESTRATOR</small></div><b>AI SYSTEM</b><small>PLAN → EXECUTE → VERIFY</small></div>
+</div>
+</section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="container">
-    <div class="section">
-      <h2>🌐 Connect With Me</h2>
-      <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">Let's collaborate and build something amazing together!</p>
-      <div class="contact-buttons">
-        <a href="mailto:ahujahariom8@gmail.com" target="_blank"><i class="fas fa-envelope"></i> Email</a>
-        <a href="https://linkedin.com/in/pateljiop" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://github.com/pateljiop" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-        <a href="https://twitter.com/pateljiop" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
-        <a href="resume.html" class="btn"><i class="fas fa-download"></i> Resume</a>
-      </div>
-    </div>
-  </section>
+<section id="stack" class="stack section">
+<div class="section-head reveal"><span>04 / STACK</span><h2>Tools I use to<br><span>make things work.</span></h2></div>
+<div class="stack-grid reveal">
+<div><span>01</span><h3>Python</h3><p>Scripting · OOP · Automation · Scraping · AI integrations</p></div>
+<div><span>02</span><h3>Web</h3><p>HTML5 · CSS3 · JavaScript · Responsive UI · React (learning)</p></div>
+<div><span>03</span><h3>Backend</h3><p>FastAPI · Django · Flask · REST APIs · Microservices</p></div>
+<div><span>04</span><h3>Data</h3><p>Pandas · NumPy · BeautifulSoup · Requests · CSV / JSON</p></div>
+<div><span>05</span><h3>DevOps</h3><p>Git · GitHub · Actions · CI/CD · Scheduled workflows</p></div>
+<div><span>06</span><h3>Tools</h3><p>VS Code · Terminal · npm · Chrome DevTools</p></div>
+</div>
+</section>
 
-  <footer style="background: white; text-align: center; padding: 2rem; margin-top: 2rem; color: #666;">
-    <p>© 2025 Hariom Patel. Made with ❤️ | All Rights Reserved</p>
-  </footer>
+<section class="credentials section"><div class="credential-row reveal"><span>CERTIFICATIONS</span><div><b>Python Development</b><small>CodSoft</small></div><div><b>Python Programming</b><small>InternPe</small></div><div><b>AI Integrations & MCP</b><small>Practical Training</small></div><div><b>Excel</b><small>Beginner → Expert</small></div></div></section>
 
-  <script src="script.js"></script>
-</body>
-</html>
+<section id="contact" class="contact section"><div class="contact-inner reveal"><p class="eyebrow"><span class="dot"></span> HAVE A PROJECT?</p><h2>Let's turn an idea<br>into <em>something real.</em></h2><p>Websites, automation, developer tools or AI workflows — if there's a useful problem to solve, let's talk.</p><a class="big-link" href="mailto:hariompatel.dev@gmail.com">hariompatel.dev@gmail.com <span>↗</span></a><div class="socials"><a href="https://github.com/pateljiop" target="_blank">GitHub</a><a href="https://linkedin.com/in/pateljiop" target="_blank">LinkedIn</a><a href="https://instagram.com/patelji_op" target="_blank">Instagram</a><a href="https://youtube.com/@techmindcentral" target="_blank">YouTube</a></div></div></section>
+</main>
+<footer><span>HARIOM BUILDS.</span><span>© 2026 / PRAYAGRAJ, INDIA</span><span>NEVER STOP BUILDING.</span></footer>
+<script src="script.js"></script>
+</body></html>
